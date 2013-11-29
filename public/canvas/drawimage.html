@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+<style trpe="text/css">
+#myCanvas {
+}
+.cvs { 
+	background: white;
+	margin: 12px 12px 12px 12px;
+	border: solid 1px blue;
+	padding: 10px 10px 10px 10px;
+	 /* No borders set */
+}
+</style>
+
+<body>
+<div>
+0,0:red 99,99:green
+</div>
+<div>
+Impl -> Impl<br />
+<canvas id="myCanvas1" class="cvs"></canvas>
+<canvas id="myCanvas2" class="cvs"></canvas>
+</div>
+
+<div>
+Impl -> Acc<br />
+<canvas id="myCanvas3" class="cvs"></canvas>
+<canvas id="myCanvas4" class="cvs"></canvas>
+</div>
+
+<div>
+Acc -> Impl<br />
+<canvas id="myCanvas5" class="cvs"></canvas>
+<canvas id="myCanvas6" class="cvs"></canvas>
+</div>
+
+<div>
+Acc -> Acc<br />
+<canvas id="myCanvas7" class="cvs"></canvas>
+<canvas id="myCanvas8" class="cvs"></canvas>
+</div>
+
+<script type="text/javascript">
+
+function initimpl(obj)
+{
+	obj.setAttribute('width','100');
+	obj.setAttribute('height','100');
+}
+function initacc(obj)
+{
+	obj.setAttribute('width','200');
+	obj.setAttribute('height','200');
+}
+function drawsomething(obj)
+{
+	ctx=obj.getContext('2d');
+	ctx.save();
+	ctx.fillStyle='red';
+	ctx.fillRect(0,0,80,80);
+	
+	ctx.fillStyle='green';
+	ctx.fillRect(99,99,1,1);
+
+	ctx.restore();
+}
+
+var canvas1 = document.getElementById('myCanvas1');
+var canvas2 = document.getElementById('myCanvas2');
+var canvas3 = document.getElementById('myCanvas3');
+var canvas4 = document.getElementById('myCanvas4');
+var canvas5 = document.getElementById('myCanvas5');
+var canvas6 = document.getElementById('myCanvas6');
+var canvas7 = document.getElementById('myCanvas7');
+var canvas8 = document.getElementById('myCanvas8');
+
+initimpl(canvas1);
+drawsomething(canvas1);
+initimpl(canvas2);
+canvas2.getContext('2d').drawImage(canvas1, 0, 0);
+
+initimpl(canvas3);
+drawsomething(canvas3);
+initacc(canvas4);
+canvas4.getContext('2d').drawImage(canvas3, 0, 0);
+
+initacc(canvas5);
+drawsomething(canvas5);
+initimpl(canvas6);
+canvas6.getContext('2d').drawImage(canvas5, 0, 0);
+
+initacc(canvas7);
+drawsomething(canvas7);
+initacc(canvas8);
+canvas8.getContext('2d').drawImage(canvas7, 0, 0);
+
+</script>
+
+</body>

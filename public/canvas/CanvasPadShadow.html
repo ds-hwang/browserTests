@@ -1,0 +1,126 @@
+<!DOCTYPE HTML> 
+<HTML> 
+<HEAD> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+<script> 
+
+var image;
+var ctx;
+window.onload=function() {
+	var cnvs = document.getElementById("cnvs");
+	ctx = cnvs.getContext('2d');
+
+	image = new Image();
+	image.src = "HTML5.png";
+	image.onload = function() {
+		animate();
+	};
+}
+
+// shim layer with setTimeout fallback
+window.requestAnimFrame = (function(){
+  return  window.requestAnimationFrame       || 
+		  window.webkitRequestAnimationFrame || 
+		  window.mozRequestAnimationFrame    || 
+		  window.oRequestAnimationFrame      || 
+		  window.msRequestAnimationFrame     || 
+		  function(/* function */ callback, /* DOMElement */ element){
+			window.setTimeout(callback, 1000 / 60);
+		  };
+})();
+
+function animate() {
+	requestAnimFrame( animate );
+	drawCanvas();
+}
+
+function drawCanvas() {
+	ctx.clearRect(0, 0, 500, 600);
+
+	turnOnShadow(ctx);
+	// Set text
+	ctx.font = "72px Segoe UI";  
+	ctx.fillStyle = "red";
+	ctx.fillText("Canvas", 90, 60);
+
+	turnOffShadow(ctx);
+	ctx.fillStyle = "blue";
+	ctx.fillText("Canvas", 87, 57);
+
+	// Add IE logo 
+	ctx.drawImage(image, 20, 100, 250, 250);
+	turnOnShadow(ctx);
+	ctx.drawImage(image, 100, 100, 250, 250);
+
+	// Draw transparent blue circles
+	turnOffShadow(ctx);
+	ctx.beginPath();
+	ctx.fillStyle = "rgba(30, 144, 255, 0.25)";
+	ctx.arc(50, 420, 30, 0, 2 * Math.PI, true);
+	ctx.fill();
+
+	turnOnShadow(ctx);
+	ctx.beginPath();
+	ctx.fillStyle = "rgba(144, 30, 255, 0.25)";
+	ctx.arc(60, 420, 30, 0, 2 * Math.PI, true);
+	ctx.fill();
+
+	turnOffShadow(ctx);
+	ctx.beginPath();
+	ctx.fillStyle = "rgba(30, 144, 255, 0.5)";
+	ctx.arc(150, 420, 30, 0, 2 * Math.PI, true);
+	ctx.fill();
+
+	turnOnShadow(ctx);
+	ctx.beginPath();
+	ctx.fillStyle = "rgba(144, 30, 255, 0.5)";
+	ctx.arc(160, 420, 30, 0, 2 * Math.PI, true);
+	ctx.fill();
+
+	turnOffShadow(ctx);
+	ctx.beginPath();
+	ctx.fillStyle = "rgba(30, 144, 255, 0.75)";
+	ctx.arc(250, 420, 30, 0, 2 * Math.PI, true);
+	ctx.fill();
+
+	turnOnShadow(ctx);
+	ctx.beginPath();
+	ctx.fillStyle = "rgba(144, 30, 255, 0.75)";
+	ctx.arc(260, 420, 30, 0, 2 * Math.PI, true);
+	ctx.fill();
+
+	// Draw opaque blue circle
+	turnOffShadow(ctx);
+	ctx.beginPath();
+	ctx.fillStyle = "rgba(30, 144, 255, 1)";
+	ctx.arc(350, 420, 30, 0, 2 * Math.PI, true);
+	ctx.fill();
+
+	turnOnShadow(ctx);
+	ctx.beginPath();
+	ctx.fillStyle = "rgba(144, 30, 255, 1)";
+	ctx.arc(360, 420, 30, 0, 2 * Math.PI, true);
+	ctx.fill();
+}
+
+function turnOnShadow(ctx) {
+	// Set shadow styles
+	ctx.shadowOffsetX = 10;  
+	ctx.shadowOffsetY = 10; 
+	ctx.shadowBlur = 10;  
+	ctx.shadowColor = "rgba(0, 0, 0, 1)";
+}
+
+function turnOffShadow(ctx) {
+	ctx.shadowOffsetX = 0;  
+	ctx.shadowOffsetY = 0; 
+	ctx.shadowBlur = 0;  
+	ctx.shadowColor = "rgba(0, 0, 0, 0)";
+}
+</script> 
+</HEAD> 
+ 
+<BODY> 
+<canvas id="cnvs" width="400" height="500" style="background-color: ghostwhite; border: 1px solid black;"></canvas> 
+</BODY> 
+</HTML> 

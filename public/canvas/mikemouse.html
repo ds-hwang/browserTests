@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script>
+window.onload=function() {
+    var cnvs = document.getElementById("cnvs");
+    if (cnvs.getContext) {
+        var ctx = cnvs.getContext('2d');
+        
+        // 왼쪽 귀
+        ctx.beginPath();
+        ctx.arc(25,25,15,0,Math.PI*2,false);
+        ctx.fill();
+        // 오른쪽 귀
+        ctx.beginPath();
+        ctx.arc(75,25,15,0,Math.PI*2,false);
+        ctx.stroke();
+        // 얼굴        
+        ctx.beginPath();
+        ctx.arc(50,50,25,0,Math.PI*2,false);
+        ctx.fill();
+        // 몸통
+        ctx.beginPath();
+        ctx.arc(50,155,80,0,Math.PI*2,false);
+        ctx.stroke();
+    }
+    else alert('canvas를 지원하지 않는 브라우저입니다.');
+}
+</script>
+</HEAD>
+
+<BODY>
+<canvas id="cnvs" width="100" height="100" style="background-color: ghostwhite; border: 1px solid black;"></canvas>
+</BODY>
+</HTML>

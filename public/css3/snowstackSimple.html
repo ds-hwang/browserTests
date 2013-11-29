@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Snow Stack - WebKit 3D CSS Visual Effects</title>
+
+<style type="text/css">
+div.cell
+{
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+img
+{
+    position: absolute;
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+div.magnify img
+{
+    -webkit-transform: scale(2.0);
+}
+</style>
+
+</head>
+
+<body>
+
+
+<div class="cell magnify" id="cell">
+<img src="./leaves/images/realLeaf1.png">
+</div>
+
+
+<script type="text/javascript">
+
+function updateStack()
+{
+    var cell = document.getElementById("cell");
+    cell.className = "cell";
+}
+
+
+window.onload = function ()
+{
+    setTimeout(function() {
+        updateStack();
+    }, 200);
+}
+
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,60 @@
+<html>
+<head>
+<style>
+#bottom {
+	width:200px;
+	z-index:150;
+	height:200px;
+/*	background-color:red;*/
+	top:0;
+	left:0;
+	background-image: url('http://www.dorothybrowser.com/test/gpu/muzcaTest/images/menu_bg.png');
+	position:absolute;
+}
+#overlay {
+	width:300px;
+	height:300px;
+/*	background-color:blue;*/
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:50;
+	background-color: rgba(0, 0, 0, 0.5);
+	margin: 0 0 0 0;
+}
+#container1 {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: 0 0 0 0;
+	display: block;
+}
+#testcanvas {
+	background-color: blue;
+	position:absolute;
+	left:200px;
+	top:200px;
+}
+</style>
+<script>
+function loaded() {
+	document.getElementById("overlay").style.display = "none";
+}
+function displayoverlay() {
+	var context = document.getElementById("testcanvas").getContext('2d');
+	document.getElementById("overlay").style.display = "block";
+}
+</script>
+</head>
+<body onload="loaded();">
+	<div id="container1">
+		<div id="bottom">
+		</div>
+		<canvas id="testcanvas" width="150" height="150">
+		</canvas>
+	<input type="button" value="test" onclick="displayoverlay();" style="position:absolute; left:500px;"/>
+	</div>
+	<div id="overlay">
+	</div>
+</body>
+</html>

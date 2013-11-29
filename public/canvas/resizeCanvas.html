@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Skookum Labs</title>
+</head>
+<body>
+	<canvas id="demo" width=100 height=100></canvas></div>
+	<script type="text/javascript">
+var canvas = document.getElementById("demo");
+var ctx = canvas.getContext("2d");
+
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+ctx.save();
+	r = ~~(Math.random() * 7 + 7);			
+	x = Math.random() * 100;
+	y = Math.random() * 100;
+	ctx.translate(x, y);
+	ctx.fillStyle = "rgba(0, 255, 0, .33)";
+	ctx.beginPath();
+	ctx.rect(0, 0, r, r);
+	//ctx.arc(0, 0, r, 0, Math.PI * 2, true);
+	ctx.closePath();
+	ctx.fill();
+ctx.restore();
+
+canvas.width = 300;
+canvas.height = 300;
+
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+ctx.save();
+	r = ~~(Math.random() * 7 + 7);			
+	x = Math.random() * 100;
+	y = Math.random() * 100;
+	ctx.translate(x, y);
+	ctx.fillStyle = "rgba(255, 0, 0, .33)";
+	ctx.beginPath();
+	ctx.rect(0, 0, r, r);
+	ctx.closePath();
+	ctx.fill();
+ctx.restore();
+	</script>
+</body>
+</html>

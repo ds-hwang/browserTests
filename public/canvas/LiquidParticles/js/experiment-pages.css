@@ -1,0 +1,57 @@
+html, body {
+    text-align: center;
+    margin:0;
+    padding:0;
+    background: #000000;
+    color: #666666;
+}
+
+canvas {
+    border: 1px solid #333333;
+}
+
+#area {
+    position: absolute;
+    height: 700px;
+    width: 482px;
+    top: 50%;
+    left: 50%;
+    margin-top: -350px;
+    margin-left: -241px;
+}
+
+#outer {
+    z-index: 0;
+    position: relative;
+    width: 482px;
+    height: 607px;
+    margin: 0 auto;
+}
+
+#canvasContainer {
+    position: absolute;
+    width: 482px;
+    height: 607px;
+}
+
+div.control {
+    position: relative;
+    z-index: 1;
+}
+
+div.info {
+    text-align: center;
+    color: red;
+}
+
+div.button {
+    width: 100px;
+    height: 60px;
+    border: 1px solid white;
+    -webkit-border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgb(255,255,255);
+    line-height: 60px;
+    display: inline-block;
+}
+

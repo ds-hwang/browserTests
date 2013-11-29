@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<mapData>
+<resultCode code="0"/>
+	<resultCnt cnt="33"/>
+	<Time>2011년02월17일12시13분</Time>
+<Road flash_id="HW_2_1" road_name="강변북로" road_no="1" link_id="15200" st_link_name="행주IC" ed_link_name="성산대교" st_link_spd="95" ed_link_spd="78">
+			
+<node flash_id="HW_2_1_1" order="1" st_node_name="서울고양경계" ed_node_name="가양대교북단" st_node_spd="92" ed_node_spd="76" />
+
+<node flash_id="HW_2_1_2" order="2" st_node_name="가양대교북단" ed_node_name="노을공원입구" st_node_spd="100" ed_node_spd="83" />
+
+<node flash_id="HW_2_1_3" order="3" st_node_name="노을공원입구" ed_node_name="월드컵경기장입구(강변북로)" st_node_spd="99" ed_node_spd="81" />
+
+<node flash_id="HW_2_1_4" order="4" st_node_name="월드컵경기장입구(강변북로)" ed_node_name="성산대교북단" st_node_spd="90" ed_node_spd="72" />
+</Road>
+
+<Road flash_id="HW_2_2" road_name="강변북로" road_no="1" link_id="15201" st_link_name="성산대교" ed_link_name="한강대교" st_link_spd="36" ed_link_spd="55">
+			
+<node flash_id="HW_2_2_1" order="1" st_node_name="성산대교북단" ed_node_name="내부순환로입구(강변북로)" st_node_spd="87" ed_node_spd="71" />
+
+<node flash_id="HW_2_2_2" order="2" st_node_name="내부순환로입구(강변북로)" ed_node_name="망원동펌프장" st_node_spd="78" ed_node_spd="61" />
+
+<node flash_id="HW_2_2_3" order="3" st_node_name="망원동펌프장" ed_node_name="양화대교북단" st_node_spd="72" ed_node_spd="54" />
+
+<node flash_id="HW_2_2_4" order="4" st_node_name="양화대교북단" ed_node_name="상수동사무소" st_node_spd="72" ed_node_spd="57" />
+
+<node flash_id="HW_2_2_5" order="5" st_node_name="상수동사무소" ed_node_name="서강대교북단" st_node_spd="59" ed_node_spd="62" />
+
+<node flash_id="HW_2_2_6" order="6" st_node_name="서강대교북단" ed_node_name="대흥동입구" st_node_spd="34" ed_node_spd="62" />
+
+<node flash_id="HW_2_2_7" order="7" st_node_name="대흥동입구" ed_node_name="마포대교북단" st_node_spd="26" ed_node_spd="47" />
+
+<node flash_id="HW_2_2_8" order="8" st_node_name="마포대교북단" ed_node_name="청암동삼거리" st_node_spd="26" ed_node_spd="44" />
+
+<node flash_id="HW_2_2_9" order="9" st_node_name="청암동삼거리" ed_node_name="원효대교북단" st_node_spd="24" ed_node_spd="42" />
+
+<node flash_id="HW_2_2_10" order="10" st_node_name="원효대교북단" ed_node_name="새남터다리" st_node_spd="24" ed_node_spd="53" />
+
+<node flash_id="HW_1_7_11" order="11" st_node_name="새남터다리" ed_node_name="한강대교북단강변북로교차점" st_node_spd="22" ed_node_spd="62" />
+</Road>
+
+<Road flash_id="HW_2_3" road_name="강변북로" road_no="1" link_id="15202" st_link_name="한강대교" ed_link_name="반포대교" st_link_spd="30" ed_link_spd="47">
+			
+<node flash_id="HW_2_3_1" order="1" st_node_name="한강대교북단강변북로교차점" ed_node_name="한강시민공원(이촌지구)" st_node_spd="23" ed_node_spd="58" />
+
+<node flash_id="HW_2_3_2" order="2" st_node_name="한강시민공원(이촌지구)" ed_node_name="동작대교북단" st_node_spd="28" ed_node_spd="47" />
+
+<node flash_id="HW_2_3_3" order="3" st_node_name="동작대교북단" ed_node_name="반포대교북단" st_node_spd="48" ed_node_spd="40" />
+</Road>
+
+<Road flash_id="HW_2_4" road_name="강변북로" road_no="1" link_id="15203" st_link_name="반포대교" ed_link_name="성수대교" st_link_spd="67" ed_link_spd="65">
+			
+<node flash_id="HW_2_4_1" order="1" st_node_name="반포대교북단" ed_node_name="한남대교북단" st_node_spd="67" ed_node_spd="40" />
+
+<node flash_id="HW_2_4_2" order="2" st_node_name="한남대교북단" ed_node_name="동호대교강변북로지점" st_node_spd="69" ed_node_spd="80" />
+
+<node flash_id="HW_2_4_3" order="3" st_node_name="동호대교강변북로지점" ed_node_name="동부간선도로입구" st_node_spd="68" ed_node_spd="84" />
+
+<node flash_id="HW_2_4_4" order="4" st_node_name="동부간선도로입구" ed_node_name="성수대교북단강변북로교차점" st_node_spd="66" ed_node_spd="81" />
+</Road>
+
+<Road flash_id="HW_2_5" road_name="강변북로" road_no="1" link_id="15204" st_link_name="성수대교" ed_link_name="잠실대교" st_link_spd="69" ed_link_spd="79">
+			
+<node flash_id="HW_2_5_1" order="1" st_node_name="성수대교북단강변북로교차점" ed_node_name="두무개길강변북로진입교차점" st_node_spd="74" ed_node_spd="86" />
+
+<node flash_id="HW_2_5_2" order="2" st_node_name="두무개길강변북로진입교차점" ed_node_name="뚝섬정수장앞" st_node_spd="70" ed_node_spd="72" />
+
+<node flash_id="HW_2_5_3" order="3" st_node_name="뚝섬정수장앞" ed_node_name="영동대교북단" st_node_spd="73" ed_node_spd="82" />
+
+<node flash_id="HW_2_5_4" order="4" st_node_name="영동대교북단" ed_node_name="청담대교북단" st_node_spd="64" ed_node_spd="79" />
+
+<node flash_id="HW_2_5_5" order="5" st_node_name="청담대교북단" ed_node_name="잠실대교북단" st_node_spd="64" ed_node_spd="79" />
+</Road>
+
+<Road flash_id="HW_2_6" road_name="강변북로" road_no="1" link_id="15205" st_link_name="잠실대교" ed_link_name="토평삼거리" st_link_spd="81" ed_link_spd="73">
+			
+<node flash_id="HW_2_6_1" order="1" st_node_name="잠실대교북단" ed_node_name="잠실철교북단" st_node_spd="69" ed_node_spd="71" />
+
+<node flash_id="HW_2_6_2" order="2" st_node_name="잠실철교북단" ed_node_name="올림픽대교북단" st_node_spd="86" ed_node_spd="69" />
+
+<node flash_id="HW_2_6_3" order="3" st_node_name="올림픽대교북단" ed_node_name="천호대교북단" st_node_spd="89" ed_node_spd="73" />
+
+<node flash_id="HW_2_6_4" order="4" st_node_name="천호대교북단" ed_node_name="광나루현대아파트" st_node_spd="85" ed_node_spd="84" />
+
+<node flash_id="HW_2_6_5" order="5" st_node_name="광나루현대아파트" ed_node_name="강변북로구리시계지점" st_node_spd="81" ed_node_spd="70" />
+
+<node flash_id="HW_2_6_6" order="6" st_node_name="강변북로구리시계지점" ed_node_name="토평삼거리" st_node_spd="81" ed_node_spd="70" />
+</Road>
+
+</mapData>

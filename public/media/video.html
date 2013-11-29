@@ -1,0 +1,72 @@
+<html>
+    <head><title>video test</title></head>
+    <script type="text/javascript">
+        function playOrStop() {
+            var video = document.getElementById("video");
+            if (video.paused)
+                video.play();
+            else
+                video.pause();
+        }
+    </script>
+    <body>
+        <p>
+        <img src="test.png"/> 
+        </p>
+        400*400 video controls, poster
+        <p/>
+<video width=400px height=400px
+poster="http://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/IU_the_Korean_Singer.jpg/256px-IU_the_Korean_Singer.jpg"
+        src="http://vidly.s3.amazonaws.com/3c5x9l/mp4.mp4"
+        controls="controls">video test 1
+</video>
+        <p>
+        <img src="sf.gif"/> 
+        </p>
+        <video
+        src="http://cdn22.castfire.com/video/313/2207/8016/555423/engadget_show_2011-03-28-080423-4135-3-1-0.900.mp4"
+        controls="true"> video test 2</video>
+        <p>
+        <img src="earth.gif"/> 
+        </p>
+        <video id="video"
+        src="http://cdn22.castfire.com/video/313/2207/8016/555423/engadget_show_2011-03-28-080423-4135-3-1-0.900.mp4"
+        >video test 3</video>
+        <input id="play/pause" type="button" value="play/pause"
+        onclick="playOrStop()"/>
+        <p>
+        400*400 video no controls with poster
+        </p>
+<video width=400px height=400px
+poster="http://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/IU_the_Korean_Singer.jpg/256px-IU_the_Korean_Singer.jpg"
+        src="http://vidly.s3.amazonaws.com/3c5x9l/mp4.mp4">video test 4
+</video>
+        <p>
+        400*400 video no controls no poster
+        </p>
+<video width=400px height=400px
+        src="http://vidly.s3.amazonaws.com/3c5x9l/mp4.mp4">video test 5
+</video>
+        <p>
+        muted
+        </p>
+<video width=400px height=400px muted="true" controls="true"
+        src="http://vidly.s3.amazonaws.com/3c5x9l/mp4.mp4">video test 6
+</video>
+        <p>
+        loop 
+        </p>
+<video width=400px height=400px loop="true" controls="true"
+        src="http://html5demos.com/assets/dizzy.mp4">video test 7</video>
+        <p>
+        preload 
+        </p>
+<video width=400px height=400px preload="true" controls="true"
+        src="http://html5demos.com/assets/dizzy.mp4">video test 8</video>
+        <p>
+        autoplay
+        </p>
+<video width=400px height=400px autoplay="true" controls="true"
+        src="http://vidly.s3.amazonaws.com/3c5x9l/mp4.mp4">video test 9</video>
+</body>
+</html>

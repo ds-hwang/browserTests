@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)http://10.19.182.41/~junho.yun/performance/CSS3d/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<script type="text/javascript" src="fps-meter.js"></script>
+<script>
+
+    function Meter () {
+        // We need to set _this in scope so that we can be ref'ed by call-backs
+        var _this = this;
+        this.log = function(fps){
+            document.getElementById("fps1").innerHTML = fps + " fps";
+        }
+        this.end = function(avgfps, minfps, maxfps) {
+            document.getElementById("fps1").innerHTML = "Average " + avgfps + " fps (min=" + minfps + " max=" + maxfps + ")";
+        };    
+        this.fpsMeter = new FPSMeter(this.log, this.end);
+    }
+
+    Meter.prototype.run = function(interval) {
+        this.fpsMeter.run(interval);
+    }
+
+    function doActionStyle(direction){
+        if (direction == 'up') {
+            document.getElementById('css3_layer').style.webkitTransform='scale(1.0)';
+        } else if(direction == 'down') {
+            document.getElementById('css3_layer').style.webkitTransform='scale(0.5)';
+        } else if(direction == 'left') {
+            document.getElementById('css3_layer').style.webkitTransform='rotate(360deg) scale(1.0)';
+        } else if(direction == 'right') {
+            document.getElementById('css3_layer').style.webkitTransform='rotate(-360deg) scale(1.0)';
+        } else if(direction == '1') {
+            document.getElementById('css3_layer').style.webkitTransform='rotate(0deg) scale(1)';
+        }
+    }
+
+    var left = true;
+    var counter = 10;
+    function swirl() {
+        if(left)
+            doActionStyle('left');
+        else
+            doActionStyle('right');
+        left = !left;
+        counter--;
+        if(counter > 0)
+            setTimeout('swirl()', 1000);
+    }
+
+    var down = true;
+    var counter = 10;
+    function scale() {
+        if(down)
+            doActionStyle('down');
+        else
+            doActionStyle('up');
+        down = !down;
+        counter--;
+        if(counter > 0)
+            setTimeout('scale()', 1000);
+    }
+
+
+    function init() {
+        setTimeout('swirl();', 1000);
+//        setTimeout('scale();', 1000);
+        setTimeout('new Meter().run(9);', 1500);
+    }
+
+    function getKeyCode(e){
+        switch (e.keyCode) {
+            case 49:    // 1
+                doActionStyle('1');
+                break;
+            case 51:    // 3
+                doActionStyle('up');
+                break;
+            case 52:    // 4
+                doActionStyle('down');
+                break;
+            case 53:    // 5
+                doActionStyle('left');
+                break;
+            case 54:    // 6
+                doActionStyle('right');
+                break;
+            case 37:    // left
+                doActionStyle('left');
+                break;
+            case 39:    // right
+                doActionStyle('right');
+                break;
+            case 38:    // up
+                doActionStyle('up');
+                break;
+            case 40:    // down
+                doActionStyle('down');
+                break;
+            case 64:    // up
+                doActionStyle('up');
+                break;
+            case 65:    // down
+                doActionStyle('down');
+                break;
+        }
+        return false;
+    }
+    document.addEventListener("keydown", getKeyCode, true);
+
+    window.onload = init;
+
+</script>
+
+</head>
+<body>
+<br><br>
+<center>
+<div id="css3_layer" style="text-align: center; width: 600px; background-color: rgb(135, 206, 235); color: black; border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: black; border-right-color: black; border-bottom-color: black; border-left-color: black; -webkit-transition-property: -webkit-transform; -webkit-transition-duration: 1s; -webkit-transition-timing-function: initial; -webkit-transition-delay: initial; -webkit-transform: rotate(-360deg) scale(1.0); ">
+Press direction key!
+<br><br>
+<img src="0.jpg"><img src="1.jpg"><img src="2.jpg"><img src="3.jpg"><img src="4.jpg"><img src="5.jpg"><img src="6.jpg"><img src="7.jpg">
+</div>
+</center>
+
+<br><br>
+
+<div style="-webkit-transform: translateZ(0px);"> <span id="fps1"></span> </div>
+
+</body></html>

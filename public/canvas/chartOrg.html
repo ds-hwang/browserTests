@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)http://www.craftymind.com/factory/guimark2/MobileHTML5ChartingTest.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GUIMark 2 Mobile - HTML5 Vector Test</title> 
+
+<script type="text/javascript">
+var meter;
+var fps;
+var results;
+var draw;
+
+var chartWidth = 320;
+var chartHeight = 440;
+var highestStock = 200;
+var totalMinutes = 90;
+var chartXSpread;
+var chartYSpread;
+var a = new Array();
+var b = new Array();
+
+function init(){
+	var canvas = document.getElementById('canvas');
+	draw = canvas.getContext('2d');
+	chartXSpread = chartWidth/totalMinutes;
+	chartYSpread = chartHeight/highestStock;
+	meter = new FPSMeter();
+	fps = document.getElementById("current");
+	results = document.getElementById("results");
+	setInterval("processFrame()", 17);
+}
+
+function processFrame(){
+	draw.clearRect(0,0,chartWidth,chartHeight);
+	draw.beginPath();
+	draw.lineWidth = 1;
+	draw.strokeStyle = "#666666";
+
+	var xCoord;
+	var yCoord;
+	for(var x=0; x<=totalMinutes; x+=30){
+		xCoord = x*chartXSpread;
+		draw.moveTo(xCoord, 0);
+		draw.lineTo(xCoord, chartHeight);
+	}
+	for(var y=0; y<=highestStock; y+=20){
+		yCoord = y*chartYSpread;
+		draw.moveTo(0, yCoord);
+		draw.lineTo(chartWidth, yCoord);
+	}
+	draw.stroke();
+	draw.closePath();
+
+	fillStockData(a, 170);
+	fillStockData(b, 90);
+	
+	graphStockData(a, b, "#FF6600", "rgba(255, 216, 176, 0.6)");
+	graphStockData(b, null, "#0000FF", "rgba(176, 176, 255, 0.6)");
+	
+	updatePerformance();
+}
+
+function fillStockData(data, region){
+	var diff = 15;
+	var low = region-(diff/2);
+	var i = 0;
+	var stock;
+	
+	if(data.length == 0){
+		while(i <= totalMinutes){
+			stock = new StockVO(i, Math.random()*diff+low);
+			data.push(stock);
+			i++;
+		}
+	}else{
+		while(i <= totalMinutes){
+			stock = data[i];
+			stock.minute--;
+			i++;
+		}
+		stock = data.shift();
+		stock.minute = totalMinutes;
+		stock.value = Math.random()*diff+low;
+		data.push(stock);
+	}
+}
+
+function graphStockData(topData, bottomData, line, fill){
+	var stock;
+	var xCoord;
+	var yCoord;
+	var i = 0;
+	
+	draw.beginPath();
+	draw.strokeStyle = line;
+	draw.lineWidth = 2;
+	draw.lineCap = "round";
+	draw.lineJoin = "round";
+	draw.fillStyle = fill;
+
+	stock = topData[i];
+	xCoord = stock.minute*chartXSpread;
+	yCoord = chartHeight-stock.value*chartYSpread;
+	draw.moveTo(xCoord, yCoord);
+
+	while(++i < topData.length){
+		stock = topData[i];
+		xCoord = stock.minute*chartXSpread;
+		yCoord = chartHeight-stock.value*chartYSpread;
+		draw.lineTo(xCoord, yCoord);
+	}
+	draw.stroke();
+	
+	if(bottomData != null){
+		i = bottomData.length;
+		while(--i > -1){
+			stock = bottomData[i];
+			xCoord = stock.minute*chartXSpread;
+			yCoord = chartHeight-stock.value*chartYSpread;
+			draw.lineTo(xCoord, yCoord);
+		}
+	}else{
+		draw.lineTo(chartWidth, chartHeight);
+		draw.lineTo(0, chartHeight);
+	}
+	draw.fill();
+	draw.closePath();
+}
+
+function updatePerformance(){
+	meter.increment();
+	fps.innerHTML = meter.getFramerate()+" fps";
+	if(testRunning){
+		continueTest();
+	}
+}
+
+//test runner
+var testBegin = 0;
+var testData = [];
+var testRunning = false;
+function startTest(){
+	testBegin = TimeUtil.getTimer();
+	testRunning = true;
+	testData = [];
+	results.innerHTML = "Running..."
+}
+function continueTest(){
+	var time = TimeUtil.getTimer();
+	testData.push(time);
+	if(time-testBegin > 10000){
+		testRunning = false;
+		var output = testData.length/(time-testBegin)*1000;
+		results.innerHTML = "Test: "+FPSMeter.formatNumber(output)+" fps"
+	}
+}
+
+//additional classes
+function StockVO(minute, value){
+	this.minute = minute;
+	this.value = value;
+}
+
+function FPSMeter(){
+	var sampleFPS = 0;
+	var lastSampledTime = 0;
+	var sampleFrames = 0;
+	
+	this.sampleDuration = 500;
+	this.increment = function(){
+		sampleFrames++;
+	}
+	this.getFramerate = function(){
+		var diff = TimeUtil.getTimer()-lastSampledTime;
+		if(diff >= this.sampleDuration){
+			var rawFPS = sampleFrames/(diff/1000);
+			sampleFPS = FPSMeter.formatNumber(rawFPS);
+			sampleFrames = 0;
+			lastSampledTime = TimeUtil.getTimer();
+		}
+		return sampleFPS;
+	}
+}
+FPSMeter.formatNumber = function(val){
+	//format as XX.XX
+	return Math.floor(val*100)/100;
+}
+
+TimeUtil = {
+	startTime: new Date().getTime(),
+	getTimer: function(){
+		return new Date().getTime()-TimeUtil.startTime;
+	}
+}
+</script>
+<style type="text/css">
+.header {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	width: 320px;
+	height: 20px;
+	background-color: #C0C4DF;
+}
+.header>div {
+	padding: 0px;
+	display: inline-block;
+}
+</style>
+
+<body onload="init()" style="margin:0px;">
+	<div class="header">
+		<div>GUIMark</div>
+		<div><input type="button" value="Start Test" onclick="startTest()"></div>
+		<div id="current" style="width:70px">56.64 fps</div>
+		<div id="results"></div>
+	</div>
+	<canvas id="canvas" width="320" height="440"></canvas>
+
+</body></html>

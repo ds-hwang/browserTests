@@ -1,0 +1,26 @@
+<!DOCTYPE HTML> 
+<HTML> 
+<HEAD> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+<script> 
+
+var ctx;
+window.onload=function() {
+	var cnvs = document.getElementById("cnvs");
+	ctx = cnvs.getContext('2d');
+	drawCanvas();
+}
+
+function drawCanvas() {
+	ctx.fillStyle = "red";
+	ctx.moveTo(20, 100);
+	ctx.quadraticCurveTo(50, 10, 80, 100);
+	ctx.fill();
+}
+</script> 
+</HEAD> 
+ 
+<BODY> 
+<canvas id="cnvs" width="200" height="200" style="background-color: ghostwhite; border: 1px solid black;"></canvas> 
+</BODY> 
+</HTML> 

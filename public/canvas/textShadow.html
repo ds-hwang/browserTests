@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+<style trpe="text/css">
+#canvas { 
+	background: #69c; 
+	margin: 12px 12px 12px 12px;
+	border: dashed 5px blue;
+	padding: 3px 3px 3px 3px;
+	 /* No borders set */
+}
+</style>
+<body>
+
+<p>
+<a href="http://hacks.mozilla.org/2011/08/calculated-drop-shadows-in-html5-canvas/"> Calculated drop shadows in HTML5 canvas<a>
+</p>
+<canvas id="canvas">your browser does not support the canvas tag </canvas>
+
+<script type="text/javascript">
+
+// grab the canvas element, get the context for API access and 
+// preset some variables
+var canvas = document.querySelector( 'canvas' ),
+    c = canvas.getContext( '2d' ),
+    mouseX = 200,
+    mouseY = 100,
+    width = 300,
+    height = 300,
+    distx = 200,
+    disty = 100,
+    hw = width / 2,
+    hh = height / 2,
+    longest = Math.sqrt( ( hw * hw ) + ( hh * hh ) ),
+    factor = 0.4,
+    realdistance = 0,
+    blur = [ 2, 9 ],
+    shadowalpha = [ 3, 8 ],
+    blurfactor = blur[1] / longest,
+    shadowfactor = shadowalpha[1] / longest;
+
+// resize the canvas
+canvas.width = width;
+canvas.height = height;
+draw();
+
+function draw() {
+
+  // calculate the distance caused by the offset
+  distx = mouseX - hw;
+  disty = mouseY - hh;
+  realdistance = Math.sqrt( ( distx * distx ) + ( disty * disty ) );
+  var currentblur = parseInt( blurfactor * realdistance, 10 );
+  if ( currentblur < blur[ 0 ] ) {currentblur = blur[0];}
+  var currentalpha = parseInt( shadowfactor * realdistance, 10 );
+  if ( currentalpha < shadowalpha[ 0 ] ) { currentalpha = shadowalpha[0]; }
+
+  c.clearRect( 0, 0, width, height );
+  c.save();
+  c.translate( hw, hh );
+  c.beginPath();
+  c.strokeStyle = 'rgba(255,255,255,0.3)';
+  c.moveTo( 0, 0 );
+  c.lineTo( distx, disty );
+  c.closePath();
+  c.stroke();
+
+  c.beginPath();
+  c.strokeStyle = 'red';
+  c.moveTo( 0, 0 );
+  c.lineTo( -distx * factor, -disty * factor );
+  c.closePath();
+  c.stroke();
+
+  c.beginPath();
+  c.shadowOffsetX = -distx * factor;
+  c.shadowOffsetY = -disty * factor;
+  c.shadowBlur = currentblur;
+  c.shadowColor = 'rgba(0,0,0,' + (1 - currentalpha / 10)  + ')';
+  c.fillStyle = 'lime';
+  var text = 'Text with shadow';
+  c.font = "bold 24px sans-serif";
+  var len = c.measureText( text );
+  c.fillText( text, -len.width/2, 12 );
+  c.closePath();
+
+  var grd = c.createRadialGradient(distx+10,disty-10,3,distx+10,disty-10,40);
+  grd.addColorStop(0, "white");
+  grd.addColorStop(1, "orange");
+  c.fillStyle = grd;  
+  c.shadowColor = 'rgba(0,0,0,0)';
+  c.beginPath();
+  c.arc( distx, disty, 20 , 0, Math.PI*2, true );
+  c.closePath();
+  c.fill();
+  c.restore();
+
+}
+
+// get the mouse position on the canvas (some browser trickery involved)
+canvas.addEventListener( 'mousemove', function( event ) {
+  if( event.offsetX ){
+    mouseX = event.offsetX;
+    mouseY = event.offsetY;
+  } else {
+    mouseX = event.pageX - event.target.offsetLeft;
+    mouseY = event.pageY - event.target.offsetTop;
+  }
+  // call the draw function
+  draw();
+}, false );
+
+</script>
+</body>
+</html>

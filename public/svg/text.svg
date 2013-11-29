@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" baseProfile="tiny" id="svg-root" width="400" height="400" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <g id="test-body-content">
+   <text x="460" y="80" text-anchor="end" xml:lang="ar" font-size="10" font-family="Andalus">لماذا لا يتكلمون اللّغة العربية فحسب؟ abv</text>
+   <text x="460" y="120" text-anchor="end" xml:lang="ar" font-size="18" font-family="Andalus">لماذا لا يتك abc</text>
+   <text x="460" y="160" text-anchor="end" xml:lang="ar" font-size="30" font-family="Andalus">لماذا لا يتكلمون اللّغة العربية فحسب؟ abd</text>
+  <!-- andalus font comes with Windows 2000 and XP -->
+  <text x="460" y="160" text-anchor="end" xml:lang="ar" font-size="36" font-family="'Diwani Letter'">لماذا لا يتكلمون اللّغة العربية فحسب؟</text>
+  <!-- Diwani fonts come with Microsoft Arabic fonts extension for Office XP
+http://www.microsoft.com/downloads/details.aspx?FamilyID=A83C0E03-8913-47A3-ACB7-8AC357627620&displaylang=AR -->
+  <text x="460" y="240" text-anchor="end" xml:lang="ar" font-size="30" font-family="'Nafees Naskh'">لماذا لا يتكلمون اللّغة العربية فحسب؟</text>
+  <!-- Nafees Nastaleeq and Nafees Naskh are  freely available from 
+  the Center for Research in Urdu Language Processing (CRULP http://www.crulp.org  ) 
+  at the National University of Computer and Emerging Sciences, Pakistan 
+  ( http://www.nu.edu.pk ) -->
+  </g>
+  <text id="revision" x="10" y="340" font-size="40" stroke="none" fill="black">$Revision: 1.4 $</text>
+  <rect id="test-frame" x="1" y="1" width="478" height="358" fill="none" stroke="#000"/>
+</svg>
+
+

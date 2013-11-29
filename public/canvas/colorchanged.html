@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script>
+window.onload=function() {
+    var cnvs = document.getElementById("cnvs");
+    if (cnvs.getContext) {
+        var ctx = cnvs.getContext('2d');
+
+ctx.miterLimit = 5;
+ctx.lineWidth = 15;
+
+ctx.fillStyle="rgba(255, 0, 0, 1.0)";
+ctx.lineJoin = "miter";
+ctx.lineCap = "round";
+
+ctx.translate(0, 50);
+ctx.save();
+
+ctx.beginPath();
+ctx.moveTo(10, 100);
+ctx.lineTo(30, 2);
+ctx.lineTo(50, 100);
+ctx.stroke();
+
+ctx.translate(60 ,0);
+ctx.beginPath();
+ctx.moveTo(10, 100);
+ctx.lineTo(30, 3);
+ctx.lineTo(50, 100);
+ctx.stroke();
+
+ctx.translate(90 ,0);
+ctx.save();
+ctx.rotate(0.2);
+ctx.beginPath();
+ctx.moveTo(10, 100);
+ctx.lineTo(30, 3);
+ctx.lineTo(50, 100);
+ctx.closePath();
+ctx.stroke();
+ctx.restore();
+
+ctx.restore();
+
+ctx.lineJoin = "bevel";
+ctx.lineCap = "square";
+
+ctx.translate(200, 0);
+ctx.save();
+
+ctx.beginPath();
+ctx.moveTo(10, 100);
+ctx.lineTo(30, 2);
+ctx.lineTo(50, 100);
+ctx.stroke();
+
+ctx.translate(60 ,0);
+ctx.beginPath();
+ctx.moveTo(10, 100);
+ctx.lineTo(30, 3);
+ctx.lineTo(50, 100);
+ctx.stroke();
+
+ctx.translate(90 ,0);
+ctx.save();
+ctx.rotate(0.2);
+ctx.beginPath();
+ctx.moveTo(10, 100);
+ctx.lineTo(30, 3);
+ctx.lineTo(50, 100);
+ctx.closePath();
+ctx.stroke();
+ctx.restore();
+
+ctx.restore();
+
+
+ctx.lineJoin = "round";
+ctx.lineCap = "butt";
+
+ctx.translate(200, 0);
+ctx.save();
+
+ctx.beginPath();
+ctx.moveTo(10, 100);
+ctx.lineTo(30, 2);
+ctx.lineTo(50, 100);
+ctx.stroke();
+
+ctx.translate(60 ,0);
+ctx.beginPath();
+ctx.moveTo(10, 100);
+ctx.lineTo(30, 3);
+ctx.lineTo(50, 100);
+ctx.stroke();
+
+ctx.translate(90 ,0);
+ctx.save();
+ctx.rotate(0.2);
+ctx.beginPath();
+ctx.moveTo(10, 100);
+ctx.lineTo(30, 3);
+ctx.lineTo(50, 100);
+ctx.closePath();
+ctx.stroke();
+ctx.restore();
+
+ctx.restore();
+
+
+
+
+    }
+    else alert('canvas를 지원하지 않는 브라우저입니다.');
+}
+</script>
+</HEAD>
+
+<BODY>
+<canvas id="cnvs" width="700" height="200" style="background-color: ghostwhite; border: 1px solid black;"></canvas>
+</BODY>
+</HTML>

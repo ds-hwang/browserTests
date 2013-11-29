@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style trpe="text/css">
+#myCanvas { 
+	background: yellow; 
+	margin: 12px 12px 12px 12px;
+	border: dashed 5px blue;
+	padding: 3px 3px 3px 3px;
+	 /* No borders set */
+}
+</style>
+<script>
+function drawStar(ctx,r){
+  ctx.save();
+  ctx.beginPath()
+  ctx.moveTo(r,0);
+  for (i=0;i<9;i++){
+    ctx.rotate(Math.PI/5);
+    if(i%2 == 0) {
+      ctx.lineTo((r/0.525731)*0.200811,0);
+    } else {
+      ctx.lineTo(r,0);
+    }
+  }
+  ctx.closePath();
+  ctx.fill();
+  ctx.restore();
+}
+
+function pathRect(ctx,r){
+  ctx.beginPath()
+  ctx.moveTo(0,0);
+  ctx.lineTo(r,0);
+  ctx.lineTo(r,r);
+  ctx.lineTo(0,r);
+  ctx.closePath();
+}
+</script>
+</head>
+<body>
+
+<canvas id="myCanvas">your browser does not support the canvas tag </canvas>
+
+<script type="text/javascript">
+
+var canvas=document.getElementById('myCanvas');
+canvas.setAttribute('width', '500');
+canvas.setAttribute('height', '300');
+var ctx=canvas.getContext('2d');
+
+
+
+ctx.save();
+ctx.translate(200, 0);
+ctx.rotate(3.14 / 6);
+ctx.translate(200, 0);
+ctx.fillStyle='#0000FF';
+drawStar(ctx, 50);
+ctx.restore();
+
+</script>
+</body>
+</html>

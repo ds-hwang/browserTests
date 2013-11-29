@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<style type="text/css">
+#myCanvas { 
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 480px;
+    height: 600px;
+    z-index: 0;
+}
+</style>
+
+<script type="text/javascript">
+
+var ctx;
+var index = 0;
+
+var world = {
+    x: 0,
+    y: 0,
+    width: 480,
+    height: 600
+};
+
+var score = 0;
+var lastTime = new Date();
+var fps;
+var frameCount = 0;
+
+window.requestAnimFrame = function() {
+    return (
+        window.requestAnimationFrame        ||
+        window.webkitRequiestAnimationFrame ||
+        window.mozRequestAnimationFrame     ||
+        window.oRequestAnimationFrame       ||
+        window.msRequestAnimationFrame      ||
+        function(/* function */ callback) {
+            window.setTimeout(callback, 1000 / 60);
+        }
+    );
+}();
+
+
+var updateTimerFired = function() {
+	window.setTimeout(updateTimerFired, 0);
+    //window.requestAnimFrame(updateTimerFired);
+    ctx.clearRect(0, 0, 480, 600);
+    ctx.fillStyle = "black";
+    ctx.fillRect(0, 0, 480, 600);
+
+	ctx.shadowColor="red";
+	ctx.shadowBlur = 5;
+	ctx.shadowOffsetX = 10;
+	ctx.shadowOffsetY = 10;
+
+    ctx.font = "40px GoodTimes";
+    ctx.textAlign = "center";
+    ctx.fillStyle = "#00FDFE";
+    ctx.fillText("FPS : " + fps, world.width / 2, world.height / 2 - 80);
+
+    ctx.font = "40px GoodTimes";
+    ctx.textAlign = "center";
+    ctx.fillStyle = "#00FDFE";
+    ctx.fillText("FRAMES : " + score, world.width / 2, world.height / 2);
+
+    score++;
+
+    var nowTime = new Date();
+    var diffTime = Math.ceil((nowTime.getTime() - lastTime.getTime()));
+    if (diffTime >= 1000) {
+        fps = frameCount;
+        frameCount = 0.0;
+        lastTime = nowTime;
+    }
+    frameCount++;
+};
+
+window.onload = function() {
+    var canvas = document.getElementById('myCanvas');
+    ctx = canvas.getContext('2d');
+    window.requestAnimFrame(updateTimerFired);
+};
+
+</script>
+<body>
+<canvas id="myCanvas" width="480" height="600">
+your browser does not support the canvas tag.
+</canvas>
+</body>
+</html>

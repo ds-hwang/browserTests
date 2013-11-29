@@ -1,0 +1,74 @@
+<!DOCTYPE HTML> 
+<HTML> 
+<HEAD> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+<script> 
+window.onload=function() {
+	var cnvs = document.getElementById("cnvs");
+	var ctx = cnvs.getContext('2d');
+	var g = ctx;
+	var w = cnvs.width;
+	var h = cnvs.height;
+
+        var s = Math.min(w, h);
+        var x = (w - s) / 2;
+        var y = (h - s) / 2;
+        for (var i = 60; i < 61; i++) {
+            var rw = s - i * 2;
+            if (rw < 0) break;
+            g.strokeStyle = "lime";
+            g.strokeRect(x + i, y + i, x + rw, y + rw);
+            i++;
+            rw = s - i * 2;
+            g.strokeStyle = "blue";
+            g.beginPath();
+            g.moveTo(x + i,      y + i);
+            g.lineTo(x + i + rw, y + i);
+            g.lineTo(x + i + rw, y + i + rw);
+            g.lineTo(x + i,      y + i + rw);
+            g.closePath();
+            g.stroke();
+        }
+
+        /*
+        var txt = "Canvas Performance Test";
+        g.beginPath();
+        g.fillStyle = "yellow";
+        g.font = "Bold 30pt Serif";
+        g.fillText(txt, 10, h/2 + 10);
+
+
+        g.fillStyle = "black";
+        g.fillRect(0, 0, w, h);
+	var g = ctx;
+	var w = cnvs.width;
+	var h = cnvs.height;
+	var x0 = Math.random() * w;
+	var x1 = Math.random() * w;
+	var x2 = Math.random() * w;
+	var x3 = Math.random() * w;
+	var y0 = Math.random() * h;
+	var y1 = Math.random() * h;
+	var y2 = Math.random() * h;
+	var y3 = Math.random() * h;
+	var xm = (x0 + x1) / 2;
+	var ym = (y0 + y1) / 2;
+	var xn = (x2 + x3) / 2;
+	var yn = (y2 + y3) / 2;
+	g.beginPath();
+	g.fillStyle = "#f00";
+	g.moveTo(xm, ym);
+	g.bezierCurveTo(x1, y1, x2, y2, xn, yn);
+	g.bezierCurveTo(x3, y3, x0, y0, xm, ym);
+	g.closePath();
+	g.fill();
+*/
+}
+</script> 
+</HEAD> 
+ 
+<BODY> 
+<!--<canvas id="cnvs" width="480px" height="480px"></canvas>-->
+<canvas id="cnvs" width="480px" height="480px"></canvas>
+</BODY> 
+</HTML> 

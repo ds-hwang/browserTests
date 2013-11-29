@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title> HTML5 Radial Gradient TESTS </title>
+<style type="text/css">
+.grad { 
+	background: #AAF; 
+	margin: 12px 12px 12px 12px;
+	border: dashed 5px blue;
+	padding: 3px 3px 3px 3px;
+	 /* No borders set */
+}
+</style>
+<script type="text/javascript">
+function printCircle(sx, sy, sr, ex, ey, er)
+{
+return;
+	ctx.strokeStyle = "black";
+	ctx.fillStyle = "black";
+	ctx.textBaseline = "middle";
+	ctx.textAlign = "center";
+
+	ctx.beginPath();
+	ctx.arc(sx, sy, sr, 0, Math.PI*2, false);
+	ctx.moveTo(sx + 3, sy);
+	ctx.lineTo(sx + sr, sy);
+	ctx.stroke();
+	ctx.fillText("S", sx, sy);
+
+	ctx.beginPath();
+	ctx.arc(ex, ey, er, 0, Math.PI*2, false);
+	ctx.moveTo(ex + 3, ey);
+	ctx.lineTo(ex + er, ey);
+	ctx.stroke();
+	ctx.fillText("E", ex, ey);
+}
+</script>
+</head>
+<body>
+<p> HTML5 Radial Gradient TESTS by Company100 </p>
+<canvas id="grad" class="grad">your browser does not support the canvas tag </canvas>
+<canvas id="grad2" class="grad">your browser does not support the canvas tag </canvas>
+<canvas id="grad3" class="grad">your browser does not support the canvas tag </canvas>
+<canvas id="grad4" class="grad">your browser does not support the canvas tag </canvas>
+<canvas id="grad5" class="grad">your browser does not support the canvas tag </canvas>
+<canvas id="grad6" class="grad">your browser does not support the canvas tag </canvas>
+<canvas id="grad7" class="grad">your browser does not support the canvas tag </canvas>
+
+<script type="text/javascript">
+var canvas=document.getElementById('grad');
+canvas.setAttribute('width', '200');
+canvas.setAttribute('height', '200');
+var ctx=canvas.getContext('2d');
+
+var grd = ctx.createRadialGradient(90, 90, 20, 100, 100, 60);
+grd.addColorStop(0, "red");
+grd.addColorStop(0.17, "orange");
+grd.addColorStop(0.33, "yellow");
+grd.addColorStop(0.5, "green");
+grd.addColorStop(0.666, "blue");
+grd.addColorStop(1, "violet");
+
+ctx.save();
+ctx.fillStyle = grd;
+ctx.fillRect(0,0,200,200);
+ctx.restore();
+
+printCircle(90, 90, 20, 100, 100, 60);
+</script>
+<script type="text/javascript">
+var canvas=document.getElementById('grad2');
+canvas.setAttribute('width', '200');
+canvas.setAttribute('height', '200');
+var ctx=canvas.getContext('2d');
+
+var grd = ctx.createRadialGradient(90, 90, 60, 100, 100, 20);
+grd.addColorStop(0, "red");
+grd.addColorStop(0.17, "orange");
+grd.addColorStop(0.33, "yellow");
+grd.addColorStop(0.5, "green");
+grd.addColorStop(0.666, "blue");
+grd.addColorStop(1, "violet");
+
+ctx.save();
+ctx.fillStyle = grd;
+ctx.fillRect(0,0,200,200);
+ctx.restore();
+
+printCircle(90, 90, 60, 100, 100, 20);
+</script>
+<script type="text/javascript">
+var canvas=document.getElementById('grad3');
+canvas.setAttribute('width', '200');
+canvas.setAttribute('height', '200');
+var ctx=canvas.getContext('2d');
+
+var grd = ctx.createRadialGradient(90, 90, 20, 110, 110, 40);
+grd.addColorStop(0, "red");
+grd.addColorStop(0.17, "orange");
+grd.addColorStop(0.33, "yellow");
+grd.addColorStop(0.5, "green");
+grd.addColorStop(0.666, "blue");
+grd.addColorStop(1, "violet");
+
+ctx.save();
+ctx.fillStyle = grd;
+ctx.fillRect(0,0,300,300);
+ctx.restore();
+
+printCircle(90, 90, 20, 110, 110, 40);
+</script>
+<script type="text/javascript">
+var canvas=document.getElementById('grad4');
+canvas.setAttribute('width', '200');
+canvas.setAttribute('height', '200');
+var ctx=canvas.getContext('2d');
+
+var grd = ctx.createRadialGradient(40, 40, 15, 150, 150, 40);
+grd.addColorStop(0, "red");
+grd.addColorStop(0.17, "orange");
+grd.addColorStop(0.33, "yellow");
+grd.addColorStop(0.5, "green");
+grd.addColorStop(0.666, "blue");
+grd.addColorStop(1, "violet");
+
+ctx.save();
+ctx.fillStyle = grd;
+ctx.fillRect(0,0,300,300);
+ctx.restore();
+
+printCircle(40, 40, 15, 150, 150, 40);
+</script>
+<script type="text/javascript">
+var canvas=document.getElementById('grad5');
+canvas.setAttribute('width', '200');
+canvas.setAttribute('height', '200');
+var ctx=canvas.getContext('2d');
+
+var grd = ctx.createRadialGradient(50, 50, 40, 160, 160, 15);
+grd.addColorStop(0, "red");
+grd.addColorStop(0.17, "orange");
+grd.addColorStop(0.33, "yellow");
+grd.addColorStop(0.5, "green");
+grd.addColorStop(0.666, "blue");
+grd.addColorStop(1, "violet");
+
+ctx.save();
+ctx.fillStyle = grd;
+ctx.fillRect(0,0,300,300);
+ctx.restore();
+
+printCircle(50, 50, 40, 160, 160, 15);
+</script>
+<script type="text/javascript">
+var canvas=document.getElementById('grad6');
+canvas.setAttribute('width', '200');
+canvas.setAttribute('height', '200');
+var ctx=canvas.getContext('2d');
+
+var grd = ctx.createRadialGradient(160, 160, 15, 50, 50, 40);
+grd.addColorStop(0, "red");
+grd.addColorStop(0.17, "orange");
+grd.addColorStop(0.33, "yellow");
+grd.addColorStop(0.5, "green");
+grd.addColorStop(0.666, "blue");
+grd.addColorStop(1, "violet");
+
+ctx.save();
+ctx.fillStyle = grd;
+ctx.fillRect(0,0,300,300);
+ctx.restore();
+
+printCircle(160, 160, 15, 50, 50, 40);
+</script>
+<script type="text/javascript">
+var canvas=document.getElementById('grad7');
+canvas.setAttribute('width', '200');
+canvas.setAttribute('height', '200');
+var ctx=canvas.getContext('2d');
+
+var grd = ctx.createRadialGradient(100, 90, 20, 100, 110, 40);
+grd.addColorStop(0, "red");
+grd.addColorStop(0.17, "orange");
+grd.addColorStop(0.33, "yellow");
+grd.addColorStop(0.5, "green");
+grd.addColorStop(0.666, "blue");
+grd.addColorStop(1, "violet");
+
+ctx.save();
+ctx.fillStyle = grd;
+ctx.fillRect(0,0,300,300);
+ctx.restore();
+
+printCircle(100, 90, 20, 100, 110, 40);
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>WebKit animation bounce easing</title>
+  <meta charset="utf-8" />
+
+  <style media="screen">
+
+    img {
+      -webkit-animation: bounce 1s infinite ;
+    }
+
+    @-webkit-keyframes bounce {
+        0% { -webkit-transform: translate3d(0,   0px,0); 
+             -webkit-animation-timing-function: ease-out; }
+       50% { -webkit-transform: translate3d(0,150px,0); 
+             -webkit-animation-timing-function: ease-in; }
+      100% { -webkit-transform: translate3d(0,   0px,0); }
+    }
+
+  </style>
+
+</head>
+<body>
+
+<div class="plane"><img src="leaves/images/realLeaf1.png" height="500" width="500" /></div>
+
+</body>
+</html>

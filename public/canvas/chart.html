@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)http://www.craftymind.com/factory/guimark2/MobileHTML5ChartingTest.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GUIMark 2 Mobile - HTML5 Vector Test</title> 
+
+<script type="text/javascript">
+var chartWidth = 320;
+var chartHeight = 440;
+
+function init(){
+	var canvas = document.getElementById('canvas');
+	draw = canvas.getContext('2d');
+	setInterval("processFrame()", 17);
+}
+
+function processFrame(){
+	draw.clearRect(0,0,chartWidth,chartHeight);
+	graphStockData();
+}
+
+function graphStockData(){
+	var yCoord;
+	
+	draw.beginPath();
+
+	yCoord = Math.random()*chartHeight;
+	draw.moveTo(0, yCoord);
+	draw.lineTo(chartWidth, yCoord);
+	draw.lineTo(chartWidth, chartHeight);
+	draw.lineTo(0, chartHeight);
+	draw.fill();
+	draw.closePath();
+}
+
+</script>
+
+<body onload="init()" style="margin:0px;">
+	<canvas id="canvas" width="320" height="440"></canvas>
+
+</body></html>

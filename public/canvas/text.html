@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script>
+window.onload=function() {
+    var cnvs = document.getElementById("cnvs");
+    if (cnvs.getContext) {
+	    var ctx = cnvs.getContext('2d');
+
+	    var fillText = "fill. 한국남자. 한국놈.";
+	    var strokeText = "stroke. 한국놈";
+	    var longText = "fill. 한국남자fill. 한국남자fill. 한국남자fill. 한국남자fill. 한국남자fill. 한국남자";
+
+	    ctx.textBaseline = "top";
+	    ctx.font = "32pt Arial";
+
+		ctx.shadowColor="black";
+		ctx.shadowBlur = 5;
+		ctx.shadowOffsetX = -10;
+		ctx.shadowOffsetY = 10;
+
+	    ctx.fillStyle = "orange";  // shadow color
+	    ctx.fillText(fillText, 22, 22);
+	    ctx.fillStyle = "red";
+	    ctx.fillText(fillText, 20, 20);
+
+		ctx.save();
+		ctx.translate(200, 0);
+		ctx.scale(2,3);
+		ctx.rotate(0.1);
+	    ctx.fillStyle = "blue";  // shadow color
+	    ctx.fillText(fillText, 20, 20);
+		ctx.translate(200, 0);
+		ctx.rotate(2);
+		ctx.scale(0.8,0.8);
+	    ctx.fillStyle = "red";
+	    ctx.fillText(fillText, 0, 20);
+		ctx.rotate(-1.6);
+		ctx.scale(0.8,0.8);
+	    ctx.fillStyle = "orange";  // shadow color
+	    ctx.fillText(fillText, 20, 20);
+		ctx.restore();
+
+
+	    ctx.strokeStyle = "blue";
+	    ctx.strokeText(strokeText, 20, 80);
+
+	    ctx.fillStyle = "green";
+		ctx.scale(0.7,0.8);
+	    ctx.fillText(longText, 20, 180);
+
+	    ctx.fillStyle = "red";
+		ctx.scale(1.5,1.5);
+	    ctx.fillText(fillText, 20, 180);
+
+	    ctx.fillStyle = "red";
+		ctx.textAlign = "center";
+	    ctx.fillText(fillText, 100, 220);
+
+	    ctx.fillStyle = "red";
+		ctx.textBaseline = "hanging"
+	    ctx.fillText(fillText, 100, 280);
+    }
+    else alert('canvas를 지원하지 않는 브라우저입니다.');
+}
+</script>
+</HEAD>
+
+<BODY>
+<canvas id="cnvs" width="1000" height="500" style="background-color: ghostwhite; border: 1px solid black;"></canvas>
+</BODY>
+</HTML>

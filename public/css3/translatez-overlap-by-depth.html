@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style type="text/css" media="screen">
+    .container {
+      width: 300px;
+      height: 100px;
+      -webkit-transform-style: preserve-3d;
+    }
+    .box {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      -webkit-transform-style: preserve-3d;
+    }
+    
+    .composited1 {
+      -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+    .composited2 {
+      -webkit-transform: translate3d(60px, 0px, 0px);
+    }
+    .composited3 {
+      -webkit-transform: translate3d(120px, 0px, 0px);
+    }
+
+    .red {
+      background-color: red;
+      opacity: 0.5;
+    }
+    .green {
+      background-color: green;
+      opacity: 0.9;
+      -webkit-transform: translate3d(0px, 0px, 10px);
+    }
+    .blue {
+      background-color: blue;
+      opacity: 0.5;
+    }
+  </style>
+  <script type="text/javascript" charset="utf-8">
+   if (window.testRunner)
+     testRunner.dumpAsText();
+
+   function doTest()
+   {
+       if (window.testRunner) {
+         document.getElementById('results').innerText = window.internals.layerTreeAsText(document);
+         testRunner.notifyDone();
+       }
+   }
+   
+   window.addEventListener('load', doTest, false);
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="composited1 box">
+      <div class="red box"></div>
+    </div>
+    <div class="composited2 box">
+      <div class="green box"></div>
+    </div>
+    <div class="composited3 box">
+      <div class="blue box"></div>
+    </div>
+  </div>
+  <pre id="results">Layer tree goes here in DRT.</pre>
+</body>
+</html>

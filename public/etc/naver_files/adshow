@@ -1,0 +1,49 @@
+if( da_br==null ) da_br="";
+if( da_br=="SAFARI" ) {
+	if( "J1A"=="J1A" ) {
+		document.write('<a href="http://ad.naver.com/adclick?unit=714A&ac=3464736&src=1393360&br=1367882" style="display:block;background:#fff;">');
+	}
+	document.write('<span style="background:#fff url(http://adcreative.naver.com/ad3/1029/1029803/citibank_283x35_bg.gif);display:block;text-decoration:none;text-align:center;"><img src="http://adcreative.naver.com/ad3/1029/1029803/citibank_283x35_4.gif" alt="AD" width="298" height="35" style="vertical-align:top;border:none" /></span>');
+	if( "J1A"=="J1A" ) {
+		document.write('</a>');
+	}
+	document.write('<img src="http://ad.naver.com/adshow?unit=714A&ac=3464736&src=1393360&t=i" border="0" style="display:none" alt="" />');
+} else if( da_br=="OPERA" ) {
+	if( "J2A"=="J2A" ) {
+		document.write('<a href="http://ad.naver.com/adclick?unit=714A&ac=3464736&src=1393361&br=1367883" style="display:block;background:#fff;">');
+	}
+	document.write('<span style="background:#fff url(http://adcreative.naver.com/ad3/1029/1029803/citibank_283x35_bg_1.gif);display:block;text-decoration:none;text-align:center;"><img src="http://adcreative.naver.com/ad3/1029/1029803/citibank_283x35_5.gif" alt="AD" width="298" height="35" style="vertical-align:top;border:none" /></span>');
+	if( "J2A"=="J2A" ) {
+		document.write('</a>');
+	}
+	document.write('<img src="http://ad.naver.com/adshow?unit=714A&ac=3464736&src=1393361&t=i" border="0" style="display:none" alt="" />');
+} else if( da_br=="POLARIS_LGT" || da_br=="POLARIS_SKT" || da_br=="LGT_WEBVIEWER" || da_br=="WM_POLARIS_LGT" ) {
+	if( "J3A"=="J3A" ) {
+		document.write('<a href="http://ad.naver.com/adclick?unit=714A&ac=3464736&src=1393362&br=1367884" style="display:block;background:#fff;">');
+	}
+	document.write('<span style="background:#fff url(http://adcreative.naver.com/ad3/1029/1029803/citibank_428x53_bg.gif);display:block;text-decoration:none;text-align:center;"><img src="http://adcreative.naver.com/ad3/1029/1029803/citibank_428x53_1.gif" alt="AD" width="448" height="53" style="vertical-align:top;border:none" /></span>');
+	if( "J3A"=="J3A" ) {
+		document.write('</a>');
+	}
+	document.write('<img src="http://ad.naver.com/adshow?unit=714A&ac=3464736&src=1393362&t=i" border="0" style="display:none" alt="" />');
+} else if( da_br=="ANDROID_WEBKIT" ) {
+	if( "J5A"=="J5A" ) {
+		document.write('<a href="http://ad.naver.com/adclick?unit=714A&ac=3464736&src=1393363&br=1367885" style="display:block;background:#fff;">');
+	}
+	document.write('<span style="background:#fff url(http://adcreative.naver.com/ad3/1029/1029803/citibank_283x35_bg_2.gif);display:block;text-decoration:none;text-align:center;"><img src="http://adcreative.naver.com/ad3/1029/1029803/citibank_283x35_6.gif" alt="AD" width="298" height="35" style="vertical-align:top;border:none" /></span>');
+	if( "J5A"=="J5A" ) {
+		document.write('</a>');
+	}
+	document.write('<img src="http://ad.naver.com/adshow?unit=714A&ac=3464736&src=1393363&t=i" border="0" style="display:none" alt="" />');	
+} else {
+	if( "J4A"=="J4A" ) {
+		document.write('<a href="http://ad.naver.com/adclick?unit=714A&ac=3464736&src=1393364&br=1367886" style="display:block;background:#fff;">');
+	}
+	document.write('<span style="background:#fff url(http://adcreative.naver.com/ad3/1029/1029803/citibank_283x35_bg_3.gif);display:block;text-decoration:none;text-align:center;"><img src="http://adcreative.naver.com/ad3/1029/1029803/citibank_283x35_7.gif" alt="AD" width="298" height="35" style="vertical-align:top;border:none" /></span>');
+	if( "J4A"=="J4A" ) {
+		document.write('</a>');
+	}
+	document.write('<img src="http://ad.naver.com/adshow?unit=714A&ac=3464736&src=1393364&t=i" border="0" style="display:none" alt="" />');
+}
+var da_imgurl = "http://em.naver.com/dalab/mobile.php?da_ua=" + da_ua + "&da_br=" + da_br;
+document.write('<img src="'+da_imgurl+'" border="0" style="display:none" alt="" />');

@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</HEAD>
+
+<BODY>
+<canvas id="cnvs" width="100" height="100" style="background-color: ghostwhite; border: 1px solid black;"></canvas>
+<script type="text/javascript">
+var cnvs = document.getElementById("cnvs");
+var ctx = cnvs.getContext('2d');
+
+ctx.beginPath();
+ctx.fillStyle="rgba(100, 0, 0, 0.9)";
+ctx.arc(40,45,35,0,Math.PI*2,false);
+ctx.fill();
+
+ctx.beginPath();
+ctx.fillStyle="rgba(0, 100, 0, 0.9)";
+ctx.arc(60,45,35,0,Math.PI*2,false);
+ctx.fill();
+</script>
+<canvas id="cnvs2" width="100" height="100" style="background-color: ghostwhite; border: 1px solid black;"></canvas>
+<script type="text/javascript">
+var cnvs = document.getElementById("cnvs2");
+var ctx = cnvs.getContext('2d');
+
+ctx.beginPath();
+ctx.fillStyle="rgba(100, 0, 0, 0.9)";
+ctx.arc(40,45,35,0,Math.PI*2,false);
+ctx.fill();
+
+ctx.beginPath();
+ctx.fillStyle="rgba(0, 100, 0, 0.9)";
+ctx.arc(60,45,35,0,Math.PI*2,false);
+ctx.fill();
+</script>
+<canvas id="cnvs3" width="150" height="150" style="background-color: ghostwhite; border: 1px solid black;"></canvas>
+<script type="text/javascript">
+var cnvs = document.getElementById("cnvs3");
+var ctx = cnvs.getContext('2d');
+
+ctx.beginPath();
+ctx.fillStyle="rgba(100, 0, 0, 0.9)";
+ctx.arc(40,45,35,0,Math.PI*2,false);
+ctx.fill();
+
+ctx.beginPath();
+ctx.fillStyle="rgba(0, 100, 0, 0.9)";
+ctx.arc(60,45,35,0,Math.PI*2,false);
+ctx.fill();
+
+</script>
+</BODY>
+</HTML>

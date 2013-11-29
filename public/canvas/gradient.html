@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script>
+window.onload=function() {
+    var cnvs = document.getElementById("cnvs");
+    if (cnvs.getContext) {
+        var ctx = cnvs.getContext('2d');
+
+	var g = ctx.createLinearGradient(0, 0, 100, 0);
+	g.addColorStop(0, '#0f0');
+	g.addColorStop(1, '#f00');
+	ctx.fillStyle = g;
+	ctx.save();
+	ctx.translate(200, 0);
+	ctx.rotate(0.1);
+	ctx.save();
+	ctx.translate(-50, 0);
+	ctx.scale(2.0, 2.0);
+	ctx.rotate(0.1);
+	ctx.fillRect(0, 0, 200, 25);
+	ctx.restore();
+	ctx.fillRect(0, 50, 110, 50);
+	ctx.fillRect(-50, 150, 1, 1);
+	ctx.restore();
+
+    var imageObj = new Image();
+    imageObj.onload = function(){
+		ctx.drawImage(imageObj, 200, 100);
+		ctx.drawImage(imageObj, 300, 100);
+    };
+    imageObj.src = "33.png";
+
+	var gradient3 = ctx.createRadialGradient(0, 0, 50, 0, 0, 100);
+	gradient3.addColorStop(0, "#F4F201");
+	gradient3.addColorStop(0.8, "#E4C700");
+	gradient3.addColorStop(1, "rgba(228,199,0,0)");
+	// Draw sun
+	ctx.translate(100, 100);
+	ctx.rotate(-0.5);
+	ctx.scale(0.5, 1);
+	ctx.fillStyle = gradient3;
+	ctx.fillRect(-100,-100,200,200);
+
+    }
+    else alert('canvas를 지원하지 않는 브라우저입니다.');
+}
+</script>
+</HEAD>
+
+<BODY>
+<canvas id="cnvs" width="700" height="200" style="background-color: ghostwhite; border: 1px solid black;"></canvas>
+</BODY>
+</HTML>
