@@ -1,0 +1,572 @@
+Signature-Version: 1.0
+SHA1-Digest-Manifest-Main-Attributes: NP7v3c51f/CiJY29pV+onmY0uFs=
+Created-By: 1.6.0_27 (Sun Microsystems Inc.)
+SHA1-Digest-Manifest: +zlPjOOryup9ciulZVI1nb0/bN0=
+
+Name: assets/libs/postprocessing/BloomPass.js
+SHA1-Digest: 0dBmRNIlrhyns0hI5FuD4yD2vuo=
+
+Name: assets/textures/checker.png
+SHA1-Digest: Hx/QWZvDZ+/6LoTamSrNxmQtGKs=
+
+Name: assets/README.md
+SHA1-Digest: ij5WQHayIehhfPPfBQryajAWEQQ=
+
+Name: assets/textures/bonus/base/normal.jpg
+SHA1-Digest: QR2IMXGCxrdV4d9EvS08j4Dv8/w=
+
+Name: assets/libs/postprocessing/ShaderPass.js
+SHA1-Digest: ywvrkPMaF93J+0O2HPcTAjwQj5A=
+
+Name: assets/textures.full/tracks/cityscape/scrapers2/normal.jpg
+SHA1-Digest: 3+NMHASkc6Qu92oMF9gyW+9DdGM=
+
+Name: assets/textures/particles/cloud.png
+SHA1-Digest: 5BwI06k7bxFGlJCr9u0rcRxvLgk=
+
+Name: assets/textures/tracks/cityscape/start/start.jpg
+SHA1-Digest: szzxDbvvfSHBdoLglnEKFztdPes=
+
+Name: assets/libs/Three.r53.js
+SHA1-Digest: KHT+Shnqij7t7AsIPU2SzhSU2G0=
+
+Name: assets/bkcore/hexgl/RaceData.js
+SHA1-Digest: ZTl7IymQUbEe8iXstqaQ0c+IxAw=
+
+Name: assets/bkcore.coffee/Timer.coffee
+SHA1-Digest: q1AbfErYbxKFZSwam5pNKkbh7uM=
+
+Name: assets/icon_256.png
+SHA1-Digest: MIaUKn4BQUdDZvhtsF8tzFhUl10=
+
+Name: assets/textures/tracks/cityscape/diffuse.jpg
+SHA1-Digest: hjgYCUUAQDmzZ/4TAV5ggp8pwio=
+
+Name: assets/bkcore/hexgl/ShipControls.js
+SHA1-Digest: vSTVtI463OQLtHXrrwAhFxHDZxg=
+
+Name: assets/textures/skybox/dawnclouds/ny.jpg
+SHA1-Digest: HppIGZdpNA70a4jpPiVCcx7ZFBU=
+
+Name: assets/libs/ShaderExtras.js
+SHA1-Digest: ZpD4HpnLoFznaGvKKzjwdjOOwDU=
+
+Name: assets/icon_64.png
+SHA1-Digest: 2bM+bo7TqEGcqmka0AUA04ayRm0=
+
+Name: assets/textures/hud/hex.jpg
+SHA1-Digest: 1ClgCVfT5rXnzhBeZJTPgZom+A0=
+
+Name: assets/textures.full/skybox/dawnclouds/py.jpg
+SHA1-Digest: nTX1EVWm+Bx7MD3xQbx18rtwD3A=
+
+Name: assets/bkcore.coffee/Timer.js
+SHA1-Digest: jV+u8uN9F9l2lB+afHrmVw8N5wI=
+
+Name: assets/textures.full/skybox/dawnclouds/px.jpg
+SHA1-Digest: BoBatp93uVlWK0u21Sp5iV9EeW0=
+
+Name: assets/textures.full/tracks/cityscape/scrapers2/specular.jpg
+SHA1-Digest: NZL8livKUGQ3nmFNeLdCoRrrzL8=
+
+Name: assets/bkcore.coffee/Utils.js
+SHA1-Digest: Ksuv415B5mj8dc/XalU/8Fvno2U=
+
+Name: assets/textures.full/hud/hud-fg-speed.png
+SHA1-Digest: 3M5MKfXOf/eeS854IqyJvMwrISw=
+
+Name: assets/replays/cityscape-casual/bkcore.replay.json
+SHA1-Digest: F8H21TI6kRI325vElrLngeT/oeY=
+
+Name: assets/libs/Editor_files/CanvasRenderer.js
+SHA1-Digest: naXh9pLHQL9MYFw/Kd3WHdUZHQM=
+
+Name: res/drawable-ldpi/crosswalk.png
+SHA1-Digest: rUapTE1blkU4F/W6T9U4yvgoYB0=
+
+Name: assets/manifest.webapp
+SHA1-Digest: HVUbISPi3XGzodSXeghiZUZXgXE=
+
+Name: assets/package.webapp
+SHA1-Digest: +Zz67Iht/13BemG8qU/RP9rQOAw=
+
+Name: assets/icon_32.png
+SHA1-Digest: XqSuuC2KJUCZLXxCJhlHvt9c8PQ=
+
+Name: assets/bkcore/hexgl/CameraChase.js
+SHA1-Digest: EUOGsua0SDjqvh4/ZFX8Ua86QA0=
+
+Name: assets/textures/tracks/cityscape/start/normal.jpg
+SHA1-Digest: xSzFkiAV9EpV+7Qt4D+vu32LK3E=
+
+Name: assets/css/mobile-controls-1.jpg
+SHA1-Digest: PRAykj9fmNqAYg+/RUsvo7qroTQ=
+
+Name: assets/libs/Detector.js
+SHA1-Digest: qSFh6cN3YU1xho842xo1qre2WDY=
+
+Name: assets/textures/skybox/dawnclouds/pz.jpg
+SHA1-Digest: F/IJZz49vrkRkG/kcHGKzv0A4v8=
+
+Name: assets/libs/Editor_files/theme-monokai.js
+SHA1-Digest: 61u0hXTBEvn+xZBmbqew5G8COdw=
+
+Name: assets/bkcore.coffee/Utils.coffee
+SHA1-Digest: 4FjEmA7rgo7PmxeKQO9uPU20uyo=
+
+Name: assets/textures/tracks/cityscape/scrapers2/normal.jpg
+SHA1-Digest: wS+kfhQWbGeHnOZTXOoq0288HRE=
+
+Name: res/drawable-mdpi/crosswalk.png
+SHA1-Digest: Q+OQcVNquo9hw60h4zkpUMlPEmU=
+
+Name: assets/bkcore.coffee/controllers/OrientationController.js
+SHA1-Digest: 1GK6OC3bcUt49aVYEPgEDk+tN5A=
+
+Name: assets/bkcore/ImageData.js
+SHA1-Digest: JG9US78dLgRM7t6/XbCwn+44mpQ=
+
+Name: assets/textures/tracks/cityscape/scrapers1/diffuse.jpg
+SHA1-Digest: 9WFKVBMNUtWa7YPRyKtgEAWBp6I=
+
+Name: assets/bkcore/threejs/Particles.js
+SHA1-Digest: zBiiImNgZO6Hw26JMekt4FkfZ2c=
+
+Name: assets/textures/particles/spark.png
+SHA1-Digest: V7nVpkWumASzgIw8xWVF+dLCoXE=
+
+Name: assets/textures/skybox/dawnclouds/py.jpg
+SHA1-Digest: W8kRk4TL+M/wWJqj72GVYkYcVI8=
+
+Name: assets/libs/Editor.html
+SHA1-Digest: eapDgi+K1JU/WbuGtwMO2+RBE4k=
+
+Name: assets/textures/ships/feisar/booster/boostersprite.jpg
+SHA1-Digest: KyhiSlbfqnPwpTzcbsKnxMpYgcg=
+
+Name: res/drawable/icon_128.png
+SHA1-Digest: IR/7Ikvs9ujF4O5YgeSg75hY/Lo=
+
+Name: assets/geometries/tracks/cityscape/scrapers1.js
+SHA1-Digest: Dew/AHjgxicTxKjjzu2cmPY9sdM=
+
+Name: assets/libs/postprocessing/EffectComposer.js
+SHA1-Digest: y3yooe33psXm3Lh2ZdGSSPAbx1I=
+
+Name: assets/geometries/booster/booster.js
+SHA1-Digest: PAzY6LZdbaYO7slRE5C23hq7C6s=
+
+Name: assets/css/touchcontroller.css
+SHA1-Digest: RxsE1rKPw1UoeB14scJqKlHk22E=
+
+Name: assets/bkcore.coffee/controllers/TouchController.js
+SHA1-Digest: aHGEAmuolXc1ctIMOFfCIJoy3ZQ=
+
+Name: assets/libs/Editor_files/font.css
+SHA1-Digest: r939cVbawgJ0vxGMqCV9aBYIkDc=
+
+Name: assets/libs/postprocessing/DotScreenPass.js
+SHA1-Digest: bVri2GUIF6gUIGSjyRnVqLOOXJk=
+
+Name: assets/textures/skybox/dawnclouds/nx.jpg
+SHA1-Digest: le0Rb9ACjZGxO3s6ivqP8CSVc80=
+
+Name: assets/bkcore.coffee/ImageData.coffee
+SHA1-Digest: KF5/Azd+GrDe5beoWqxe7+UCB2c=
+
+Name: assets/bkcore/threejs/Loader.js
+SHA1-Digest: n4WtnUefP1H4RZfvMVl7iODg4L8=
+
+Name: assets/textures.full/particles/cloud - Copie.png
+SHA1-Digest: AFjjud5JDv1OaC2Lk0MbHe2u7pk=
+
+Name: assets/libs/Editor_files/kinetic.js
+SHA1-Digest: 9QvGSHAF004t93v1RJ8RjngxaI4=
+
+Name: assets/icon_128.png
+SHA1-Digest: LYDpXWRhGVyTHxucZjyK9MgOACk=
+
+Name: assets/textures/tracks/cityscape/specular.jpg
+SHA1-Digest: 9psNOgibLAUn1XfAc6HK0w59UMo=
+
+Name: assets/textures/particles/damage.png
+SHA1-Digest: 4qQdyL5h9B73ZsENfhosRiKue9E=
+
+Name: assets/bkcore/Utils.js
+SHA1-Digest: d/jw68RouFKpGDeOZab4LHv6wvE=
+
+Name: resources.arsc
+SHA1-Digest: OK8WN3nc7HMEKZ4nUp/ckUqvjic=
+
+Name: assets/geometries/tracks/cityscape/scrapers2.js
+SHA1-Digest: T/XewGA03kxv2hxXMViTj0OZamM=
+
+Name: assets/textures.full/bonus/base/diffuse.jpg
+SHA1-Digest: 6Cddfo/kOqurwgYwdLzpS9o2yDw=
+
+Name: assets/libs/Editor_files/hashlist.js
+SHA1-Digest: 8u8xZWIW4oM57MLjP1SuqRaIF0I=
+
+Name: assets/textures.full/skybox/dawnclouds/ny.jpg
+SHA1-Digest: t6CCsg+l7esn3uuq8Em633X+Wcc=
+
+Name: assets/bkcore/hexgl/tracks/Cityscape.js
+SHA1-Digest: OXvZgB5gA5A0zqu1kozfEuw6qlA=
+
+Name: AndroidManifest.xml
+SHA1-Digest: NlOH1+JExAIlhXiy3QMR3FcMOxI=
+
+Name: res/drawable-hdpi/crosswalk.png
+SHA1-Digest: InUzbdrVW2RSuUi39R5LjUVnUPo=
+
+Name: assets/libs/Editor_files/Iterator.js
+SHA1-Digest: L36Q0Ua2WOpqlPZOvqsKpl2SKkA=
+
+Name: assets/textures.full/tracks/cityscape/specular.jpg
+SHA1-Digest: WDRA7vV9MpCvUZjxrFMrFuQVip8=
+
+Name: assets/geometries/bonus/base/base.js
+SHA1-Digest: wXgd6wQbI4jDaKdW3jGJ1oohctA=
+
+Name: assets/textures/bonus/base/specular.jpg
+SHA1-Digest: hP+6n1YUY5p1cxBuP7W9ZD2zQY8=
+
+Name: assets/css/mobile.jpg
+SHA1-Digest: YkSaDwAQFHRCzRCpEFx9s2/7aLw=
+
+Name: assets/libs/Editor_files/Timer.js
+SHA1-Digest: zZRA23REemR0zO7k7iqfluuaEeU=
+
+Name: assets/.htaccess
+SHA1-Digest: ITxndNeprST37+6KIF1Ra3Ht1jI=
+
+Name: assets/textures.full/hud/hex.jpg
+SHA1-Digest: AW/6R1+h5Qd74lr8CMweb3te+o4=
+
+Name: assets/libs/Three.dev.js
+SHA1-Digest: 3iNcLHq3OQKAMXzRII0WPHie50s=
+
+Name: assets/libs/Editor_files/mode-json.js
+SHA1-Digest: LMF8wiR/JJnnJtwhkwA9Pn1fhgo=
+
+Name: assets/textures.full/skybox/dawnclouds/pz.jpg
+SHA1-Digest: NKcetQ6qKqPio0PSchbKkK8mT0w=
+
+Name: assets/textures/tracks/cityscape/scrapers1/normal.jpg
+SHA1-Digest: pXsQvZycmH6kKKQAAAU7Qo9qaqI=
+
+Name: assets/textures.full/particles/cloud.png
+SHA1-Digest: kebIKX7YU7lRXMeLvmBklIvQr5I=
+
+Name: assets/bkcore/threejs/Preloader.js
+SHA1-Digest: 71IMZnGcGmr1WnlEk/R5V3BX3TY=
+
+Name: assets/textures.full/bonus/base/normal.jpg
+SHA1-Digest: Z6ssWQMXxIgcG7+eKhYTXFmaJjI=
+
+Name: assets/textures/skybox/dawnclouds/nz.jpg
+SHA1-Digest: Y+gDIeptEiXnfUGpgzebIW1P5ig=
+
+Name: classes.dex
+SHA1-Digest: TH6HubFqHn+sRbSL8+zYyXdYl20=
+
+Name: assets/libs/Editor_files/jquery-1.8.js
+SHA1-Digest: pRRGGMDHBhP4w4ZB1U2KFI0scjA=
+
+Name: assets/textures.full/tracks/cityscape/scrapers1/specular.jpg
+SHA1-Digest: hzMWidp4Djzc9BtIdNf9iGJWqfQ=
+
+Name: assets/css/mobile-controls-2.jpg
+SHA1-Digest: kkA4Q6VZWcozPEHm86dFuY6Efz8=
+
+Name: assets/bkcore/hexgl/HexGL.js
+SHA1-Digest: iE9IA4RHepLhfClWGbjTuN1n1gM=
+
+Name: assets/textures.full/ships/feisar/booster/booster.png
+SHA1-Digest: fdKggwCgnZ+LGL16n4zrMWUUZrE=
+
+Name: assets/libs/Editor_files/pooled.js
+SHA1-Digest: joqlHcC/z8Xy1yp5RBoIKqavQ9g=
+
+Name: assets/libs/Stats.js
+SHA1-Digest: J5T6L7DphFVebz/XkCf3czFeDTo=
+
+Name: assets/textures/ships/feisar/specular.jpg
+SHA1-Digest: EO6Uc0iwO1JpM6JtMrg/xndQqIs=
+
+Name: assets/textures.full/tracks/cityscape/diffuse.jpg
+SHA1-Digest: UoGVJQN1jL246oxlt4c/FRnsmCY=
+
+Name: assets/textures.full/skybox/dawnclouds/nx.jpg
+SHA1-Digest: w6oA2km2MbY/9SipYU6NxGvXOpI=
+
+Name: assets/textures.full/tracks/cityscape/scrapers1/diffuse.jpg
+SHA1-Digest: zomqbNDbhaeqSzO4Ghg2ezv0gd8=
+
+Name: assets/bkcore/hexgl/HUD.js
+SHA1-Digest: 5OZTEd76NoKw6cbcDEM/gTvr9VQ=
+
+Name: assets/textures.full/tracks/cityscape/scrapers2/diffuse.jpg
+SHA1-Digest: 60qAxznUYm0Q4JG5I4+xb9mIMJ4=
+
+Name: assets/bkcore.coffee/threejs/Particles.js
+SHA1-Digest: YRqD8l1POg3vSmapdXB3bx50UYk=
+
+Name: assets/bkcore/threejs/RenderManager.js
+SHA1-Digest: 16ep9R3Lc2y7Je3dIiPEU9Lqy8o=
+
+Name: assets/bkcore/hexgl/Ladder.js
+SHA1-Digest: ZakVoGWU94vS/KgMktvnNUBW8V0=
+
+Name: assets/textures/ships/feisar/normal.jpg
+SHA1-Digest: GpZEhCOpwRDbFLzXRxcNncGFi3M=
+
+Name: assets/libs/postprocessing/SavePass.js
+SHA1-Digest: u7lTyELcOFoBSni/aFt6luyTmx8=
+
+Name: assets/geometries/tracks/edge/track.js
+SHA1-Digest: tSJGZoV0m8+oo7/CSydvXxjsNPQ=
+
+Name: assets/geometries/tracks/cityscape/bonus/speed.js
+SHA1-Digest: jAFkqAzficzBnP0Z6CcWz2vKfes=
+
+Name: assets/css/fonts.css
+SHA1-Digest: KIu16Jl3CLiFiW4p5tvJ1Pd1470=
+
+Name: assets/libs/Editor_files/class.js
+SHA1-Digest: arczfE5+TGWm0dpHyIiy19CpuqY=
+
+Name: assets/textures.full/tracks/cityscape/scrapers1/normal.jpg
+SHA1-Digest: WeJ1HxjO9mktjrlMb63SqB0aLvg=
+
+Name: assets/textures/particles/cloud - Copie.png
+SHA1-Digest: CADEZ12XsNpAeNfscbKy8lUqFUQ=
+
+Name: assets/css/BebasNeue-webfont.ttf
+SHA1-Digest: gucGS4edJc+VeTCXQkJmU5nuPog=
+
+Name: assets/libs/Editor_files/ModuleList.js
+SHA1-Digest: yYGILhPTybOXStflEjeEHpSLrYo=
+
+Name: assets/libs/Editor_files/ace.js
+SHA1-Digest: UogvgXXcfSd65mWC/eHJS5u7yNc=
+
+Name: assets/textures/tracks/cityscape/height.png
+SHA1-Digest: +xR679s+z5/0jW2+AdSLmG6Or9U=
+
+Name: assets/libs/postprocessing/MaskPass.js
+SHA1-Digest: J9l/eDESCjwWUaTGGMakhhcVqps=
+
+Name: assets/textures/skybox/dawnclouds/px.jpg
+SHA1-Digest: svPQqn+EGgSEL6Qbz+3YGLTYa6c=
+
+Name: assets/package.zip
+SHA1-Digest: q61HtFIWd5uVTlhkvpiNnAGQPAQ=
+
+Name: assets/textures.full/hud/hud-fg-shield.png
+SHA1-Digest: FpoHqBZlAwYDiOr34G6nxelwC8A=
+
+Name: assets/textures.full/tracks/cityscape/start/normal.jpg
+SHA1-Digest: /82KFNXceiazUKyKHt4UGo+GW/c=
+
+Name: assets/textures.full/tracks/cityscape/start/start.jpg
+SHA1-Digest: z92tX61IP0ZOwryu51DVC5YPViQ=
+
+Name: assets/bkcore.coffee/ImageData.js
+SHA1-Digest: BJHAdEbT3bfMapRd/hXiWCWgQpY=
+
+Name: assets/textures.full/bonus/base/specular.jpg
+SHA1-Digest: jaFkoOwMNWxhJZeHMHUM/wpI3cg=
+
+Name: assets/game.html
+SHA1-Digest: kvBBUifibpe7QW4g6PIeV02JSa4=
+
+Name: assets/libs/postprocessing/FilmPass.js
+SHA1-Digest: nEsCulpT1Z/mEqXKb8pCnBOexVQ=
+
+Name: assets/geometries/tracks/cityscape/startbanner.js
+SHA1-Digest: n5m3gZWMgD/cXV+mR18FfsdfhXk=
+
+Name: assets/cache.appcache
+SHA1-Digest: fYHvFRO4lmW2DDiErjDdn3xIG0M=
+
+Name: assets/textures/tracks/cityscape/scrapers2/specular.jpg
+SHA1-Digest: 8lUcFG3CRnkN7NraBHpY3jF4Bvo=
+
+Name: assets/geometries/tracks/cityscape/start.js
+SHA1-Digest: MnaQNyQM7MGinFQ5l7C3Q3lWBYw=
+
+Name: assets/bkcore/Timer.js
+SHA1-Digest: 0ZeeSk7kkFEfZO6kpS+G43MFhBk=
+
+Name: assets/textures.full/ships/feisar/normal.jpg
+SHA1-Digest: Gs+4AIwyRtnE5mREfyJTyTyva00=
+
+Name: assets/libs/Editor_files/jhashtable.js
+SHA1-Digest: HcKv2usoYyMRCL92JrzDjT2bODk=
+
+Name: assets/libs/Editor_files/App.js
+SHA1-Digest: QtwscTRvp8yKUFUO/i3YCBZ2wJA=
+
+Name: assets/geometries/ships/feisar/feisar.js
+SHA1-Digest: ABOODAICD0qT1kmJmsZN1mnY1uM=
+
+Name: assets/bkcore/hexgl/Gameplay.js
+SHA1-Digest: vmvQy0OGgiiWGAmq/jBcgAdGUgI=
+
+Name: assets/textures.full/ships/feisar/diffuse.jpg
+SHA1-Digest: mwW4MaOrD5kNpHZuM0zg7I+kRss=
+
+Name: assets/textures.full/skybox/dawnclouds/nz.jpg
+SHA1-Digest: +WYWTTrmG0+8t5d3/CwNhoAhmNQ=
+
+Name: assets/textures.full/particles/damage.png
+SHA1-Digest: q2U9APnaU91fZvpkECpz715WFWw=
+
+Name: assets/textures/hud/hud-fg-shield.png
+SHA1-Digest: wx4E5MA3kLzTsaPYbm2508dFfmc=
+
+Name: assets/libs/Editor_files/Links.js
+SHA1-Digest: VdrFephMMQ759n+xUxx1m5lr7sQ=
+
+Name: assets/textures.full/checker.png
+SHA1-Digest: Aq39fHGSbCBgLexgmG9bt9b3lqI=
+
+Name: assets/textures/particles/spark - Copie.png
+SHA1-Digest: hIoggDYsu4zkjOypyHfGxh/ROWg=
+
+Name: assets/libs/Editor_files/Parser.js
+SHA1-Digest: ShEemEN9vlNIeAEnLE3LYAdHds8=
+
+Name: assets/textures/tracks/cityscape/normal.jpg
+SHA1-Digest: PJSKArRUDlo065QedzRmtGxiYq8=
+
+Name: assets/textures.full/particles/spark - Copie.png
+SHA1-Digest: AegHXSVXRnmelnxMaYkCRYNd7pw=
+
+Name: assets/textures.full/ships/feisar/specular.jpg
+SHA1-Digest: T5dHxzeJ5Of5OMnqPvonil4p07g=
+
+Name: res/drawable-xhdpi/crosswalk.png
+SHA1-Digest: 1XK0+6b0uU0ih/FNCbo5si2a470=
+
+Name: assets/libs/Editor_files/main.css
+SHA1-Digest: xMYBFx1EnD0YT/UJtfP/tcUVNF0=
+
+Name: assets/libs/Editor_files/editor.css
+SHA1-Digest: 3fpGMyNXeG1FiiHFxh6KbG/BN+8=
+
+Name: assets/textures/hud/hud-bg.png
+SHA1-Digest: zuw+LC45/oYtX7R5VNLpbFoqslM=
+
+Name: assets/textures/hud/hud-fg-speed.png
+SHA1-Digest: 650eIwNs2zSfoW3JyM1Gtp19Klc=
+
+Name: assets/css/BebasNeue-webfont.woff
+SHA1-Digest: c7nzepHJYoKVecslhL4iXJ52aYI=
+
+Name: assets/manifest.json
+SHA1-Digest: 24vSBhAMZ1YhXEyYlFsK7wzZpGk=
+
+Name: assets/textures.full/tracks/cityscape/height.png
+SHA1-Digest: mKUEmLibSuM+EABlJvf8hRAwwiY=
+
+Name: assets/libs/Editor_files/Project.js
+SHA1-Digest: abUTUfkvX9XwWBt4umzBaQb1TiE=
+
+Name: assets/textures.full/ships/feisar/booster/boostersprite.jpg
+SHA1-Digest: /MsovPVrnFzDV/ozudLaCwPKFFQ=
+
+Name: assets/textures.full/particles/spark.png
+SHA1-Digest: +g1KW4SwT+cR51UkjqzpKe2Nqtc=
+
+Name: assets/index.html
+SHA1-Digest: Jygc3Sc1rNrV8vos1HgnjaOqIsA=
+
+Name: assets/libs/Editor_files/Node.js
+SHA1-Digest: k80ExiAGgKMgXBdVRI043/lvGiU=
+
+Name: assets/bkcore/hexgl/ShipEffects.js
+SHA1-Digest: lzEzgiP3nbaQaYQX13zXy1YYqhg=
+
+Name: assets/textures/tracks/cityscape/start/specular.jpg
+SHA1-Digest: lBSBcDWc48OlNRfWr5DcCkhR904=
+
+Name: assets/css/BebasNeue-webfont.eot
+SHA1-Digest: V5y7ooyoJuNxM8NLd3Ww6Tfo4RI=
+
+Name: assets/css/BebasNeue-webfont.svg
+SHA1-Digest: OgtrYeihj0cFppFWV0pASD3JSdo=
+
+Name: assets/libs/DAT.GUI.min.js
+SHA1-Digest: U75h2/S8mIwBEwSl5G/N/LKu0Hg=
+
+Name: assets/libs/postprocessing/TexturePass.js
+SHA1-Digest: 1idbvazmYyfIpgnFKvBgbLXRt9M=
+
+Name: assets/css/mobile-over.jpg
+SHA1-Digest: Fm8lDMWwgDu3u0dCEVuMP6/E8A0=
+
+Name: assets/textures/ships/feisar/booster/booster.png
+SHA1-Digest: TLYjq9gAHyIfO4B+0H0umYay3IU=
+
+Name: assets/libs/Editor_files/gamecore.js
+SHA1-Digest: wfmSy1r4RcFjzE58Xjlzw8REvug=
+
+Name: assets/textures/ships/feisar/diffuse.jpg
+SHA1-Digest: UPnD2/xqjhrgFbytldAjrwObAKk=
+
+Name: assets/bkcore.coffee/tests.html
+SHA1-Digest: RrMz5WswUWGCxdaXk9Du627ADbg=
+
+Name: assets/textures/bonus/base/diffuse.jpg
+SHA1-Digest: uKVfstVCZ2IDT3DAyACO24NB080=
+
+Name: assets/bkcore.coffee/controllers/OrientationController.coffee
+SHA1-Digest: aMhaskeARbqKFWIW/xlrUfCJYEY=
+
+Name: assets/bkcore.coffee/controllers/TouchController.coffee
+SHA1-Digest: n2Zn+hN6fKJ6AWE2LwAFv0eSENE=
+
+Name: assets/geometries/tracks/cityscape/track.js
+SHA1-Digest: mJjrLaEmhiIdDPAixEynUqgQZx8=
+
+Name: assets/textures.full/tracks/cityscape/start/diffuse.jpg
+SHA1-Digest: 3/9p8osaAPJ25YBWmROM4JyS2a8=
+
+Name: assets/bkcore/threejs/Shaders.js
+SHA1-Digest: zqzdHRJHIbvEqKyCxGeyRJvscUo=
+
+Name: assets/textures.full/tracks/cityscape/normal.jpg
+SHA1-Digest: tk7mnF6GPCIymkgs3HVMO82Z/wA=
+
+Name: assets/textures/tracks/cityscape/scrapers1/specular.jpg
+SHA1-Digest: g+Zx1PNgBa9G1pSx1Mehi50q/ho=
+
+Name: assets/textures.full/hud/hud-bg.png
+SHA1-Digest: 2lA1+1BI/BsTqVEFD1qFgVTYfNI=
+
+Name: assets/textures.full/tracks/cityscape/start/specular.jpg
+SHA1-Digest: LoIQnxT/GUgwOW0xIU5nGAm5njo=
+
+Name: assets/textures/tracks/cityscape/scrapers2/diffuse.jpg
+SHA1-Digest: fqrJbVOh+IxUju2GCSQ5POB8c5k=
+
+Name: assets/textures.full/tracks/cityscape/collision.png
+SHA1-Digest: ISCvpFAp9vAzNll0aK54kgFpgKc=
+
+Name: assets/libs/postprocessing/RenderPass.js
+SHA1-Digest: W36YtImRZXKtLarvb2/E2ZYNv4c=
+
+Name: assets/textures/tracks/cityscape/start/diffuse.jpg
+SHA1-Digest: 8Kg2pfulDkR83jzv6fjkRoPoNYM=
+
+Name: assets/textures/tracks/cityscape/collision.png
+SHA1-Digest: S3h7pyjlZZIYqPz3DdgKAGLR+ZI=
+
+Name: assets/bkcore.coffee/threejs/Particles.coffee
+SHA1-Digest: SlK9ceV6jriv/3/NM8WKdV6lAKM=
+
+Name: assets/libs/Editor_files/Diagram.js
+SHA1-Digest: 0dknnO6JiaVpgE/Y7uP22BRc3ME=
+
