@@ -66,6 +66,7 @@ function start() {
 
     video.preload = "auto";
     videoElement.src = "../test.mp4";
+    //videoElement.src = "../big_buck_bunny.mp4";
   }
 }
 
@@ -306,7 +307,9 @@ function updateTexture() {
 //
 function startVideo() {
   videoElement.play();
-  intervalID = setInterval(drawScene, 15);
+  window.requestAnimationFrame(drawScene);
+  videoElement.removeEventListener("canplaythrough", startVideo, true);
+  //intervalID = setInterval(drawScene, 15);
 }
 
 //
@@ -396,6 +399,7 @@ function drawScene() {
   }
   
   lastCubeUpdateTime = currentTime;
+  window.requestAnimationFrame(drawScene);
 }
 
 //
