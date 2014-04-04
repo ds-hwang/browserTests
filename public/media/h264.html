@@ -15,8 +15,8 @@
 <h1>test of sound formats</h1>
 
 <div>H.264:<br />
-<video id="video" controls autoplay loop>
-</video>
+<video id="video" controls autoplay loop> </video>
+<video id="video2" controls autoplay loop> </video>
 <script type="text/javascript">
 
 var videoElement = document.getElementById("video");
@@ -24,6 +24,12 @@ videoElement.addEventListener('error', function(ev) {
     console.log("\nmp4 codec is not supported on this platform. Received error event:" + ev.target.error.code + "\n");
 }, false);
 videoElement.src = "bear-1280x720.mp4";
+
+var videoElement2 = document.getElementById("video2");
+videoElement2.addEventListener('error', function(ev) {
+    console.log("\nvideo2 mp4 codec is not supported on this platform. Received error event:" + ev.target.error.code + "\n");
+}, false);
+videoElement2.src = "crabesa.mp4";
 </script>
 </body>
 </html>
