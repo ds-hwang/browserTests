@@ -1,0 +1,49 @@
+<html>
+  <head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>WebRTC Screencast demo</title>
+    <script type="text/javascript">
+      function desktopCapture() {
+        chrome.desktopCapture.chooseDesktopMedia(
+            ["screen", "window"], onAccessApproved);
+      }
+
+    function onAccessApproved(desktop_id) {
+        if (!desktop_id) {
+            alert('Desktop Capture access rejected.');
+            return;
+        }
+        console.log("onAccessApproved desktop_id:" + desktop_id);
+
+        navigator.webkitGetUserMedia({
+            audio: false,
+            video: {
+                mandatory: {
+                    chromeMediaSource: 'desktop',
+                    chromeMediaSourceId: desktop_id,
+                    minWidth: 1280,
+                    maxWidth: 1280,
+                    minHeight: 720,
+                    maxHeight: 720
+                }
+            }
+        }, gotStream, getUserMediaError);
+
+        function gotStream(stream) {
+          document.getElementsByTagName("video")[0].src =
+              window.webkitURL.createObjectURL(stream);
+        }
+
+        function getUserMediaError(e) {
+            alert('getUserMediaError: ' + JSON.stringify(e, null, '---'));
+        }
+    }
+
+      window.onload = function() {
+        setTimeout(desktopCapture, 2000);
+      };
+    </script>
+  </head>
+  <body>
+    <video autoplay="" width="1366" height="768"></video>
+  </body>
+</html>
