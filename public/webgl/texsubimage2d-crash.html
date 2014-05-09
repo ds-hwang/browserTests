@@ -1,0 +1,146 @@
+><script src=resources/pnglib.js></script>
+<script src=resources/webgl-test-utils.js></script>
+
+<script>
+var wtu = WebGLTestUtils;
+var testCases = [];
+
+var DataMode = {
+    IMAGE: 0,
+    NUM_HTML_MODES: 2,
+
+};
+
+function init()
+{
+    var canvas = document.getElementById("example");
+    gl = wtu.create3DContext(canvas);
+    initializeTests();
+}
+
+function initializeTests()
+{
+    for (var dataMode = 0; dataMode < DataMode.NUM_HTML_MODES; ++dataMode) {
+        for (var useTexSubImage2D = 0; useTexSubImage2D < 2; ++useTexSubImage2D) {
+            testCases.push({
+                dataMode: dataMode,
+                useTexSubImage2D: !!useTexSubImage2D,
+                width: 256,
+                height: 1,
+                premultiplyAlpha: true,
+                format: gl.RGBA,
+                type: gl.UNSIGNED_BYTE,
+            });
+            if (dataMode != DataMode.RAW_DATA) {
+                testCases.push({
+                });
+            }
+            testCases.push({
+            });
+        }
+    }
+
+    generateTestData();
+}
+
+function generateTestData()
+{
+    for (var i = 0; i < testCases.length; i++) {
+        var testCase = testCases[i];
+        switch (testCase.dataMode) {
+        case DataMode.IMAGE:
+            wrapper = new ImageWrapper(testCase.width, testCase.height);
+            switch (testCase.type) {
+            case gl.UNSIGNED_BYTE:
+                switch (testCase.format) {
+                }
+            }
+        }
+        testCase.wrapper = wrapper;
+        testCase.wrapper.generateData();
+    }
+
+}
+
+function maybeRunTests()
+{
+        for (var i = 0; i < testCases.length; ++i)
+        runOneTest(testCases[i]);
+}
+
+{
+}
+
+function runOneTest(testCase)
+{
+    var data = testCase.wrapper.data;
+    var texture = gl.createTexture();
+    gl.bindTexture(gl.TEXTURE_2D, texture);
+    gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, testCase.premultiplyAlpha);
+    if (testCase.useTexSubImage2D) {
+        gl.texImage2D(gl.TEXTURE_2D, 0, testCase.format, testCase.width, testCase.height, 0,
+                      testCase.format, testCase.type, null);
+    }
+    switch (testCase.dataMode) {
+    case DataMode.IMAGE:
+            gl.texSubImage2D(gl.TEXTURE_2D, 0, 0, 0, testCase.format, testCase.type, data);
+    }
+    if (window.nonKhronosFrameworkNotifyDone) {
+    }
+}
+
+function ImageWrapper(width, height)
+{
+    this.pngBuilder_ = new PNGlib(width, height, 256);
+};
+
+ImageWrapper.prototype.setPixel = function(x, a) {
+};
+
+ImageWrapper.prototype.generateData = function() {
+    var that = this;
+    var img = new Image();
+    img.onload = function() {
+        that.data = img;
+        maybeRunTests();
+    };
+    img.src = "data:image/png;base64," + this.pngBuilder_.getBase64();
+};
+
+{
+    if (!ImageDataWrapper.tempCanvas) {
+    }
+}
+
+ImageDataWrapper.prototype.setPixel = function(x, a) {
+}
+
+RGBA8DataWrapper.prototype.setPixel = function(x, a) {
+};
+
+RGB565DataWrapper.prototype.setPixel = function(x, a) {
+    var value = (((r & 0xF8) << 8)
+                 | ((b & 0xF8) >> 3));
+};
+
+A8DataWrapper.prototype.setPixel = function(x, a) {
+    for (var x = 0; x < width; ++x) {
+    }
+}
+
+{
+    for (var x = 0; x < width; ++x) {
+    }
+}
+
+function allChannelsIncreaseByNoMoreThan(array, numOccurrences) {
+}
+
+function colorChannelsAreZero(array, numOccurrences) {
+            if (array[i + j] != 0) {
+            }
+
+}
+
+</script>
+<body onload=init()>
