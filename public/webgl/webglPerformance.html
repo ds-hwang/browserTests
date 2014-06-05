@@ -103,9 +103,14 @@
                      0.0, -0.8, 0.0,
                      0.8, 0.8, 0.0 ];
     var count = 0;
+    var lost_context = false;
 
     function draw()
     {
+        if (lost_context) {
+            console.log("stop draw due to context lost");
+            return;
+        }
         //window.setTimeout(draw, 0);
         window.requestAnimFrame(draw);
         count++;
@@ -121,6 +126,17 @@
     function drawCanvas()
     {
       initialize();
+      canvas.addEventListener("webglcontextlost", function(e) {
+              console.log("webglcontextlost");
+              e.preventDefault();
+              lost_context = true;
+              });
+      canvas.addEventListener("webglcontextrestored", function() {
+              console.log("webglcontextrestored");
+              lost_context = false;
+              initialize();
+              window.requestAnimFrame(draw);
+              });
       window.requestAnimFrame(draw);
     }
     </script>

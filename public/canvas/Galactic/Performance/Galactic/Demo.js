@@ -1547,6 +1547,19 @@ function OnWindowResize(e) {
 
 }
 
+window.requestAnimFrame = function() {
+    return (
+        window.requestAnimationFrame        ||
+        window.webkitRequiestAnimationFrame ||
+        window.mozRequestAnimationFrame     ||
+        window.oRequestAnimationFrame       ||
+        window.msRequestAnimationFrame      ||
+        function(/* function */ callback) {
+            window.setTimeout(callback, 1000 / 60);
+        }
+    );
+}();
+
 //  Initialize demo ---------------------------------------------------------//
 function Main() {
 
@@ -1604,7 +1617,8 @@ function Main() {
     ToggleView();
     ToggleMiniView();
     
-    setInterval(Loop, 16);
+    //setInterval(Loop, 16);
+    window.requestAnimFrame(Loop);
 }
 
 //  Create Environmental Effects ------------------------------------------------------//
@@ -1748,6 +1762,7 @@ function GetMoonOrbitCenter() {
 
 //  Main loop to update and render scene ------------------------------------//
 function Loop() {
+    window.requestAnimFrame(Loop);
     gFpsData.BeginFrame();
     
     Update();
