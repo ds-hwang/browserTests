@@ -57,16 +57,15 @@ function start() {
     // Start listening for the canplaythrough event, so we don't
     // start playing the video until we can do so without stuttering
     
-    videoElement.addEventListener("canplaythrough", startVideo, true);
-        
+    videoElement.addEventListener("playing", startVideo, true);
+    //videoElement.src = "../big_buck_bunny.mp4";
+    videoElement.loop = true;
+    videoElement.play();
+
     // Start listening for the ended event, so we can stop the
     // animation when the video is finished playing.
-    
-    videoElement.addEventListener("ended", videoDone, true);
 
-    video.preload = "auto";
-    videoElement.src = "../test.mp4";
-    //videoElement.src = "../big_buck_bunny.mp4";
+    videoElement.addEventListener("ended", videoDone, true);
   }
 }
 
@@ -306,9 +305,8 @@ function updateTexture() {
 // as our texture.
 //
 function startVideo() {
-  videoElement.play();
   window.requestAnimationFrame(drawScene);
-  videoElement.removeEventListener("canplaythrough", startVideo, true);
+  videoElement.removeEventListener("playing", startVideo, true);
   //intervalID = setInterval(drawScene, 15);
 }
 
