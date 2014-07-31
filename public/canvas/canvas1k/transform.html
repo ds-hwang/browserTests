@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  	<style type="text/css">body { margin: 0px; }</style> <!-- Android fix -->
+    <script>
+      (function() {
+          var W           = window.innerWidth;
+          var H           = window.innerHeight;
+          var N           = 1000;
+
+          var bgImage     = null;
+          var spriteImage = null;
+          var ctx         = null;
+
+          function start() {
+              bgImage = new Image();
+              bgImage.onload = function () {
+                  spriteImage = new Image();
+                  spriteImage.onload = function() {
+                      prepareScene();
+                      drawScene();
+                  }
+                  spriteImage.src = "resources/images/asteroide.png";
+              }
+              bgImage.src = "resources/images/fondo.png";
+          }
+
+          function prepareScene() {
+              // Create and draw the sprites canvas
+              var canvas = document.createElement('canvas');
+              canvas.width= W;
+              canvas.height= H;
+
+              document.body.appendChild(canvas);
+              ctx = canvas.getContext("2d");
+          }
+
+          function drawScene() {
+              ctx.drawImage(bgImage, 0, 0, W, H);
+
+              var dx = 0.1, dy = 0.1;
+              console.time("drawScene");
+              for(var i = 0; i < 500; i++ ) {
+                  ctx.transform(1, 0, 0, 1, dx, dy);
+                  //ctx.drawImage(spriteImage, dx, dy);
+              }
+              for(var i = 0; i < 500; i++ ) {
+                  ctx.transform(1, 0, 0, 1, -dx, -dy);
+                  //ctx.drawImage(spriteImage, dx, dy);
+              }
+              console.timeEnd("drawScene");
+
+              requestAnimationFrame(drawScene);
+          }
+
+          function drawSprite(i) {
+              var spriteX = 50 * i + Math.random() * 25;
+              var spriteY = 50 * i + Math.random() * 25;
+
+          }
+          window.addEventListener("load",start,false);
+
+        })();
+       </script>
+  </head>
+  <body>
+  </body>
+</html>
