@@ -1,0 +1,21 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width">
+<title>Video</title>
+<script>
+function pressPlay()
+{
+	var video = document.getElementsByTagName('video')[0];
+
+	video.webkitRequestFullscreen();
+	video.src = "test.mp4";
+	video.play();
+}
+</script>
+</head>
+<body>
+<button onclick="pressPlay()">Press Play</button>
+<br>
+<video width="640" height="360" src="test.mp4"></video>
+</body>
+</html>
