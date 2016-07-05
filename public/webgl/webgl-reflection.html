@@ -1,118 +1,156 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <style type="text/css" media="screen">
-      canvas {
-        margin: 20px;
-        width: 200px;
-        height: 200px;
-        padding: 0 20px;
-        border: 2px solid black;
-        -webkit-box-reflect: below 20px;
-        outline: 10px solid transparent; /* affects layer sizes */
-      }
-    
-    </style>
-    <script id="vertexShader" type="x-shader/x-vertex">
-      attribute vec4 vPosition;
+    <head>
+        <style type="text/css" media="screen">
+            canvas {
+              margin: 20px 20px 20px 20px;
+              width: 400px;
+              height: 200px;
+              padding: 0 20px;
+              border: 2px solid black;
+              outline: 10px solid transparent; /* affects layer sizes */
+            }
 
-      void main() {
-         gl_Position = vPosition;
-      }
-    </script>
+        </style>
+        <script id="vertexShader" type="x-shader/x-vertex">
+            attribute vec4 vPosition;
 
-    <script id="fragmentShader" type="x-shader/x-fragment">
-      void main() {
-          gl_FragColor = vec4(0.0, 0.5, 0.0, 1.0);
-      }
-    </script>
-    <script>
-    if (window.layoutTestController)
-        layoutTestController.overridePreference("WebKitWebGLEnabled", "1");
+            void main() {
+               gl_Position = vPosition;
+            }
+        </script>
 
-    var gl = null;
+        <script id="fragmentShader" type="x-shader/x-fragment">
+            void main() {
+                gl_FragColor = vec4(0.0, 0.5, 0.0, 1.0);
+            }
+        </script>
+        <script>
+        if (window.layoutTestController)
+            layoutTestController.overridePreference("WebKitWebGLEnabled", "1");
 
-    function draw()
-    {
-        var vertices = [ 0.0, 0.8, 0.0,
-                        -0.8, -0.8, 0.0,
-                         0.8, -0.8, 0.0 ]; 
-        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
+        function draw(gl, vertices)
+        {
+            gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
 
-        gl.vertexAttribPointer(0, 3, gl.FLOAT, false, 0, 0); // Load the vertex data
-        gl.enableVertexAttribArray(0); 
-        gl.drawArrays(gl.TRIANGLES, 0, 3); 
-        gl.flush();
-    }
-
-    function getFragmentShader()
-    {
-        var shaderNode = document.getElementById("fragmentShader"); // fragmentShader has been defined at the top
-        var shaderSource = getShaderSource(shaderNode);
-
-        var shader = gl.createShader(gl.FRAGMENT_SHADER);
-        gl.shaderSource(shader, shaderSource);
-        gl.compileShader(shader);
-
-        return shader;
-    }
-
-    function getShaderSource(shaderNode)
-    {
-        var shaderSource = "";
-        var node = shaderNode.firstChild;
-        while (node) {
-            if (node.nodeType == 3) // Node.TEXT_NODE
-                shaderSource += node.textContent;
-            node = node.nextSibling;
+            gl.vertexAttribPointer(0, 3, gl.FLOAT, false, 0, 0); // Load the vertex data
+            gl.enableVertexAttribArray(0);
+            gl.drawArrays(gl.TRIANGLES, 0, 3);
         }
 
-        return shaderSource;
-    }
+        function getFragmentShader(gl)
+        {
+            var shaderNode = document.getElementById("fragmentShader"); // fragmentShader has been defined at the top
+            var shaderSource = getShaderSource(shaderNode);
 
-    function getVertexShader()
-    {
-        var shaderNode = document.getElementById("vertexShader");
-        var shaderSource = getShaderSource(shaderNode);
+            var shader = gl.createShader(gl.FRAGMENT_SHADER);
+            gl.shaderSource(shader, shaderSource);
+            gl.compileShader(shader);
 
-        var shader = gl.createShader(gl.VERTEX_SHADER);
-        gl.shaderSource(shader, shaderSource);
-        gl.compileShader(shader);
+            return shader;
+        }
 
-        return shader;
-    }
+        function getShaderSource(shaderNode)
+        {
+            var shaderSource = "";
+            var node = shaderNode.firstChild;
+            while (node) {
+                if (node.nodeType == 3) // Node.TEXT_NODE
+                    shaderSource += node.textContent;
+                node = node.nextSibling;
+            }
 
-    function initialize()
-    {
-        var theCanvas = document.getElementById("canvas");
-        gl = theCanvas.getContext("experimental-webgl");
+            return shaderSource;
+        }
 
-        var vertexShader = getVertexShader();
-        var fragmentShader = getFragmentShader();
+        function getVertexShader(gl)
+        {
+            var shaderNode = document.getElementById("vertexShader");
+            var shaderSource = getShaderSource(shaderNode);
 
-        var shaderProgram = gl.createProgram();
-        gl.attachShader(shaderProgram, vertexShader);
-        gl.attachShader(shaderProgram, fragmentShader);
-        gl.bindAttribLocation(shaderProgram, 0, "vPosition"); // vPosition has been defined at the top
-        gl.linkProgram(shaderProgram);
+            var shader = gl.createShader(gl.VERTEX_SHADER);
+            gl.shaderSource(shader, shaderSource);
+            gl.compileShader(shader);
 
-        gl.useProgram(shaderProgram);
+            return shader;
+        }
 
-         var buffer = gl.createBuffer();
-        gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
-    }
+        function initialize(gl)
+        {
+            var vertexShader = getVertexShader(gl);
+            var fragmentShader = getFragmentShader(gl);
 
-    function drawCanvas()
-    {
-      initialize();
-      draw();
-    }
-    </script>
-  </head>
-  <body onload="drawCanvas()">
-   
-    <p>You should see a green triangle and its reflection.</p>
-    <canvas id="canvas" style="left: 20px" width="200" height="200"></canvas>
+            var shaderProgram = gl.createProgram();
+            gl.attachShader(shaderProgram, vertexShader);
+            gl.attachShader(shaderProgram, fragmentShader);
+            gl.bindAttribLocation(shaderProgram, 0, "vPosition"); // vPosition has been defined at the top
+            gl.linkProgram(shaderProgram);
 
-  </body>
+            gl.useProgram(shaderProgram);
+
+             var buffer = gl.createBuffer();
+            gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+
+            gl.clearColor(0.5, 0.5, 0.5, 0.5);
+            gl.clear(gl.COLOR_BUFFER_BIT);
+        }
+
+        function drawCanvas()
+        {
+            var vertices1 = [-0.5, 0.8, 0.0,
+                            -0.9, -0.8, 0.0,
+                            -0.1, -0.8, 0.0 ];
+            var vertices2 = [0.15, 0.8, 0.0,
+                             0.1, -0.8, 0.0,
+                             0.9, -0.7, 0.0 ];
+            var canvas1 = document.getElementById("canvas1");
+            var gl1 = canvas1.getContext("webgl", { alpha: true, antialias: true });
+            initialize(gl1);
+            draw(gl1, vertices1);
+            draw(gl1, vertices2);
+
+            var canvas2 = document.getElementById("canvas2");
+            var gl2 = canvas2.getContext("webgl", { alpha: false, antialias: true });
+            initialize(gl2);
+            draw(gl2, vertices1);
+            draw(gl2, vertices2);
+
+            var canvas3 = document.getElementById("canvas3");
+            var gl3 = canvas3.getContext("webgl", { alpha: true, antialias: false });
+            initialize(gl3);
+            draw(gl3, vertices1);
+            draw(gl3, vertices2);
+
+            var canvas4 = document.getElementById("canvas4");
+            var gl4 = canvas4.getContext("webgl", { alpha: true, antialias: true });
+            initialize(gl4);
+            draw(gl4, vertices1);
+            draw(gl4, vertices2);
+
+            var canvas5 = document.getElementById("canvas5");
+            var gl5 = canvas5.getContext("webgl", { alpha: false, antialias: true });
+            initialize(gl5);
+            draw(gl5, vertices1);
+            draw(gl5, vertices2);
+
+            var canvas6 = document.getElementById("canvas6");
+            var gl6 = canvas6.getContext("webgl", { alpha: true, antialias: false });
+            initialize(gl6);
+            draw(gl6, vertices1);
+            draw(gl6, vertices2);
+        }
+        </script>
+    </head>
+    <body onload="drawCanvas()">
+
+        <p>You should see a green triangle and its reflection.</p>
+        <canvas id="canvas1" width="400" height="200"></canvas>
+        <canvas id="canvas2" width="400" height="200"></canvas>
+        <canvas id="canvas3" width="400" height="200"></canvas>
+        <div/>
+        <canvas id="canvas4" width="400" ></canvas>
+        <canvas id="canvas5" width="400" ></canvas>
+        <canvas id="canvas6" width="400" ></canvas>
+
+    </body>
 </html>
