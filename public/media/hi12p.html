@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head><title>video test</title>
+<style trpe="text/css">
+#vid1 { 
+	background: yellow; 
+	margin: 12px 12px 12px 12px;
+	border: dashed 5px blue;
+	padding: 3px 3px 3px 3px;
+	 /* No borders set */
+}
+</style>
+</head>
+    <body>
+<h1>test of sound formats</h1>
+
+<div>YUV420P10 video<br />
+<video id="video" controls autoplay loop> </video>
+<script type="text/javascript">
+
+var videoElement = document.getElementById("video");
+videoElement.addEventListener('error', function(ev) {
+    console.log("\nmp4 codec is not supported on this platform. Received error event:" + ev.target.error.code + "\n");
+}, false);
+videoElement.src = "bear-320x180-hi12p-vp9.webm";
+</script>
+</body>
+</html>
