@@ -6,12 +6,19 @@
 <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=615325">sharp video bug</a>
 <br/>
 <video id="video" controls autoplay loop> </video>
+<video id="video2" controls autoplay loop> </video>
 <script type="text/javascript">
 var videoElement = document.getElementById("video");
 videoElement.addEventListener('error', function(ev) {
     console.log("\nmp4 codec is not supported on this platform. Received error event:" + ev.target.error.code + "\n");
 }, false);
-videoElement.src = "sharp2.webm";
+videoElement.src = "sharp_map.webm";
+
+var videoElement2 = document.getElementById("video2");
+videoElement2.addEventListener('error', function(ev) {
+    console.log("\nmp4 codec is not supported on this platform. Received error event:" + ev.target.error.code + "\n");
+}, false);
+videoElement2.src = "sharp3.webm";
 </script>
 </body>
 </html>
