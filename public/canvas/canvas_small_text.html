@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<html>
+<style type="text/css">
+#myCanvas { 
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 480px;
+    height: 600px;
+    z-index: 0;
+}
+</style>
+
+<script type="text/javascript">
+
+var ctx;
+var steps = [1, 2, 3, 4, 5, 6, 7, 8]
+var imgdata = [];
+var length = 100;
+var index = 0;
+var width = 480;
+var height = 600;
+
+
+var world = {
+    x: 0,
+    y: 0,
+    width: width,
+    height: height
+};
+
+var lastTime = new Date();
+var fps;
+var frameCount = 0;
+
+window.requestAnimFrame = function() {
+    return (
+        window.requestAnimationFrame        ||
+        window.webkitRequiestAnimationFrame ||
+        window.mozRequestAnimationFrame     ||
+        window.oRequestAnimationFrame       ||
+        window.msRequestAnimationFrame      ||
+        function(/* function */ callback) {
+            window.setTimeout(callback, 1000 / 60);
+        }
+    );
+}();
+
+function wrapText(context, text, x, y, maxWidth, lineHeight) {
+    var words = text.split(' ');
+    var line = '';
+
+    for(var n = 0; n < words.length; n++) {
+      var testLine = line + words[n] + ' ';
+      var metrics = context.measureText(testLine);
+      var testWidth = metrics.width;
+      if (testWidth > maxWidth && n > 0) {
+        context.fillText(line, x, y);
+        line = words[n] + ' ';
+        y += lineHeight;
+      }
+      else {
+        line = testLine;
+      }
+    }
+    context.fillText(line, x, y);
+}
+
+
+var updateTimerFired = function() {
+	window.setTimeout(updateTimerFired, 0);
+    //window.requestAnimFrame(updateTimerFired);
+    ctx.clearRect(0, 0, width, height);
+    ctx.fillStyle = "#EB1010";
+    ctx.fillRect(0, 0, width, height);
+    ctx.imageSmoothingEnabled= false;
+
+    var lineHeight = 30;
+    var text = " : Lorem ipsum dolor sit amet,Stet clita kasd gubergren,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,  consetetur sadipscing elitr,  sed diam voluptua."
+
+    ctx.font = "small-caps lighter 30px arial";
+    ctx.textAlign = "center";
+    ctx.fillStyle = "#10EB10";
+    wrapText(ctx, ctx.font + text + " FPS : " + fps, world.width / 2, 400, width, lineHeight);
+
+    var x = 10;
+    var y = 10;
+    for(var n = 0; n < steps.length; n++) {
+        ctx.putImageData(imgdata[n], x, y);
+        x += length + 11;
+        ctx.putImageData(imgdata[n], x, y + 1);
+        x += length + 11;
+        if (x + length > width) {
+            x = 10;
+            y += length + 10;
+        }
+    }
+
+    var nowTime = new Date();
+    var diffTime = Math.ceil((nowTime.getTime() - lastTime.getTime()));
+    if (diffTime >= 1000) {
+        fps = frameCount;
+        frameCount = 0.0;
+        lastTime = nowTime;
+    }
+    frameCount++;
+};
+
+var createPatternImage = function(ctx, step) {
+    var imagedata = ctx.createImageData(length, length);
+    var twostep = 2 * step;
+    var data = imagedata.data;
+    for (var y = 0; y < length; y++) {
+        var index = 0;
+        if ((y % twostep) >= step)
+            index = step;
+        for (var x = 0; x < length; x++) {
+            var i = ((y*length) + x)*4;
+            if ((index % twostep) < step) {
+                data[i] = 0x10;
+                data[i+1] = 0xEB;
+                data[i+2] = 0x10;
+                data[i+3] = 0xFF;
+            } else {
+                data[i] = 0xEB;
+                data[i+1] = 0x10;
+                data[i+2] = 0x10;
+                data[i+3] = 0xFF;
+            }
+            index++;
+        }
+    }
+    return imagedata;
+}
+
+window.onload = function() {
+    var canvas = document.getElementById('myCanvas');
+    ctx = canvas.getContext('2d');
+
+    for(var n = 0; n < steps.length; n++) {
+        imgdata.push(createPatternImage(ctx, steps[n]));
+    }
+
+    window.requestAnimFrame(updateTimerFired);
+};
+
+</script>
+<body>
+<canvas id="myCanvas" width="480" height="600">
+your browser does not support the canvas tag.
+</canvas>
+</body>
+</html>
