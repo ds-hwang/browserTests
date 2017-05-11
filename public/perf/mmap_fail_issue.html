@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style type="text/css">
+    #backdrop {
+      margin: 0;
+    }
+
+    #backdrop div {
+      position: absolute;
+      border-radius: 2px;
+      opacity: 0.5;
+      width: 100%;
+      height: 900px;
+      transform-style: preserve-3d;
+      will-change: transform;
+      transform: translateZ(0);
+    }
+  </style>
+  <script type="text/javascript">
+    var N = 7;
+    var duration = 50;
+    var elems = [];
+    var j = 0;
+    function createElements()
+    {
+      for (var i = 0; i < N; i++) {
+        var keyframes = [{background: '#111'}, {background: '#eee'}];
+        var elem = document.createElement("div");
+        elem.style.transform = "rotate3d(1,1,0," + ((j++ + 1) * 5).toString() + "deg)";
+        backdrop.appendChild(elem);
+        elem.animate(keyframes, {duration: duration, iterations: Infinity,
+          direction: 'alternate', delay: -2 * duration * Math.random()});
+        elems.push(elem);
+      }
+    }
+
+    function popElements()
+    {
+      for (var i = 0; i < N; i++) {
+        var elem = elems.shift();
+        backdrop.removeChild(elem);
+      }
+    }
+
+    var updateTimerFired = function() {
+      popElements();
+      window.setTimeout(createElements, 0);
+      gc();
+    };
+
+    var reloadTimerFired = function() {
+      window.location.href = "mmap_fail_issue.html"
+    };
+
+    function startExperiment()
+    {
+      var keyframes = [{background: '#111'}, {background: '#eee'}];
+      document.body.animate(keyframes, {duration: duration, iterations: Infinity,
+        direction: 'alternate', delay: -2 * duration * Math.random()});
+      createElements();
+      window.setInterval(updateTimerFired, duration);
+      window.setTimeout(reloadTimerFired, 1000);
+    }
+    window.addEventListener('load', startExperiment, false);
+
+  </script>
+</head>
+<body>
+<div id="backdrop"></div>
+</body>
+</html>
