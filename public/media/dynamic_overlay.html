@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>video test</title>
+	<style trpe="text/css">
+		video {
+			margin: 20px;
+		}
+
+		#video1 {
+			width: 400px;
+		}
+
+		.plane {
+			position: absolute;
+
+		}
+
+		#leave1 {
+			-webkit-animation: bounce 5s infinite;
+		}
+
+		@-webkit-keyframes bounce {
+			0% {
+				transform: translate3d(0, 0, 0);
+			}
+			20% {
+				transform: translate3d(150%, 0, 0) scale(3, 1);
+			}
+			40% {
+				transform: translate3d(400%, 0, 0) scale(3, 1);
+			}
+			60% {
+				transform: translate3d(250%, 0, 0) scale(6, 1);
+			}
+			100% {
+				transform: translate3d(0, 0px, 0);
+			}
+		}
+
+		#leave2 {
+			-webkit-animation: hider 5s infinite;
+		}
+
+		@-webkit-keyframes hider {
+			0% {
+				transform: translate3d(450%, 200%, 0);
+			}
+			85% {
+				transform: translate3d(450%, 200%, 0);
+			}
+			100% {
+				transform: translate3d(450%, 0%, 0);
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<h1>3 video are hardware overlaid in turn</h1>
+	<div class="plane">
+		<img id="leave1" src="../css3/leaves/images/realLeaf1.png" height="200" width="200" />
+	</div>
+	<div class="plane">
+		<img id="leave2" src="../css3/leaves/images/realLeaf1.png" height="200" width="200" />
+	</div>
+	<video id="video1" controls autoplay loop> </video>
+	<video id="video2" controls autoplay loop> </video>
+	<video id="video3" controls autoplay loop> </video>
+
+	<script type="text/javascript">
+		var videoElement = document.getElementById("video1");
+		videoElement.addEventListener('error', function (ev) {
+			console.log("\nmp4 codec is not supported on this platform. Received error event:" + ev.target.error.code + "\n");
+		}, false);
+		videoElement.src = "bear-1280x720.mp4";
+
+		var videoElement2 = document.getElementById("video2");
+		videoElement2.addEventListener('error', function (ev) {
+			console.log("\nvideo2 mp4 codec is not supported on this platform. Received error event:" + ev.target.error.code + "\n");
+		}, false);
+		videoElement2.src = "crabesa.mp4";
+
+		var videoElement3 = document.getElementById("video3");
+		videoElement3.addEventListener('error', function (ev) {
+			console.log("\nvideo3 mp4 codec is not supported on this platform. Received error event:" + ev.target.error.code + "\n");
+		}, false);
+		videoElement3.src = "test.mp4";
+
+		var reloadTimerFired = function () {
+			window.location.href = "dynamic_overlay.html"
+		};
+		window.setTimeout(reloadTimerFired, 10000);
+	</script>
+</body>
+
+</html>
